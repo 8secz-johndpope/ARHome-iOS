@@ -49,6 +49,7 @@
 		799C63D82376EE7800A64A1C /* ARHome-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ARHome-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		799C63DC2376EE7800A64A1C /* ARHome_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARHome_iOSUITests.swift; sourceTree = "<group>"; };
 		799C63DE2376EE7800A64A1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		799C63EA2376F88700A64A1C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		799C63AE2376EE7600A64A1C = {
 			isa = PBXGroup;
 			children = (
+				799C63EA2376F88700A64A1C /* README.md */,
 				799C63B92376EE7600A64A1C /* ARHome-iOS */,
 				799C63D02376EE7800A64A1C /* ARHome-iOSTests */,
 				799C63DB2376EE7800A64A1C /* ARHome-iOSUITests */,
