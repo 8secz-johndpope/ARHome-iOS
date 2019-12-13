@@ -11,12 +11,15 @@ import ARKit
 import RealityKit
 import Combine
 
+#if arch(arm64)
+
 struct ARViewContainer: UIViewRepresentable {
   
   @Binding var isCoachingActived: Bool
   let resetSubject = PassthroughSubject<Void, Never>()
   
   func makeUIView(context: Context) -> ARView {
+    
     let arView = ARView(frame: .zero)
     
     let coachingOverlay = ARCoachingOverlayView()
@@ -90,3 +93,5 @@ extension ARViewContainer.Coordinator {
   }
   
 }
+
+#endif

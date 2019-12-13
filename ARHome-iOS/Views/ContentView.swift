@@ -13,6 +13,7 @@ struct ContentView : View {
   
   @State var isCoachingActived = false
   
+  #if arch(arm64)
   var body: some View {
     ARViewContainer(isCoachingActived: $isCoachingActived)
       .edgesIgnoringSafeArea(.all)
@@ -24,6 +25,12 @@ struct ContentView : View {
       }
       .statusBar(hidden: true)
   }
+  #else
+  var body: some View {
+    EmptyView()
+  }
+  #endif
+
   
 }
 

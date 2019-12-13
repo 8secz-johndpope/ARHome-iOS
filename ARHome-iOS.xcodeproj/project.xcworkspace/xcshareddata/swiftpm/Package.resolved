@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Grid",
+        "repositoryURL": "git@github.com:SwiftUIExtensions/Grid.git",
+        "state": {
+          "branch": null,
+          "revision": "15800a8b6a6dd5eb655315cf2ce26291903b894a",
+          "version": "0.7.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
