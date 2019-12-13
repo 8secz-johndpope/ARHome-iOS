@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		797B3FF2239FDF4B000FE5C6 /* chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 797B3FEF239FDF4B000FE5C6 /* chair.usdz */; };
+		797B3FF3239FDF4B000FE5C6 /* gramophone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 797B3FF0239FDF4B000FE5C6 /* gramophone.usdz */; };
+		797B3FF4239FDF4B000FE5C6 /* tv.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 797B3FF1239FDF4B000FE5C6 /* tv.usdz */; };
 		799C63BB2376EE7600A64A1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C63BA2376EE7600A64A1C /* AppDelegate.swift */; };
 		799C63BD2376EE7600A64A1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C63BC2376EE7600A64A1C /* ContentView.swift */; };
-		799C63BF2376EE7600A64A1C /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 799C63BE2376EE7600A64A1C /* Experience.rcproject */; };
 		799C63C12376EE7800A64A1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799C63C02376EE7800A64A1C /* Assets.xcassets */; };
 		799C63C42376EE7800A64A1C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799C63C32376EE7800A64A1C /* Preview Assets.xcassets */; };
 		799C63C72376EE7800A64A1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799C63C52376EE7800A64A1C /* LaunchScreen.storyboard */; };
 		799C63D22376EE7800A64A1C /* ARHome_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C63D12376EE7800A64A1C /* ARHome_iOSTests.swift */; };
 		799C63DD2376EE7800A64A1C /* ARHome_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C63DC2376EE7800A64A1C /* ARHome_iOSUITests.swift */; };
+		79F13AA1239E9549006749A1 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F13AA0239E9549006749A1 /* ARViewContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		797B3FEF239FDF4B000FE5C6 /* chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = chair.usdz; sourceTree = "<group>"; };
+		797B3FF0239FDF4B000FE5C6 /* gramophone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = gramophone.usdz; sourceTree = "<group>"; };
+		797B3FF1239FDF4B000FE5C6 /* tv.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tv.usdz; sourceTree = "<group>"; };
 		799C63B72376EE7600A64A1C /* ARHome-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARHome-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		799C63BA2376EE7600A64A1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		799C63BC2376EE7600A64A1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		799C63BE2376EE7600A64A1C /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		799C63C02376EE7800A64A1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		799C63C32376EE7800A64A1C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		799C63C62376EE7800A64A1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +55,7 @@
 		799C63DC2376EE7800A64A1C /* ARHome_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARHome_iOSUITests.swift; sourceTree = "<group>"; };
 		799C63DE2376EE7800A64A1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		799C63EA2376F88700A64A1C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		79F13AA0239E9549006749A1 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		797B3FED239FDF4B000FE5C6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				797B3FEE239FDF4B000FE5C6 /* Models */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		797B3FEE239FDF4B000FE5C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				797B3FEF239FDF4B000FE5C6 /* chair.usdz */,
+				797B3FF0239FDF4B000FE5C6 /* gramophone.usdz */,
+				797B3FF1239FDF4B000FE5C6 /* tv.usdz */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		797B3FF5239FDF94000FE5C6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				799C63C52376EE7800A64A1C /* LaunchScreen.storyboard */,
+				799C63C82376EE7800A64A1C /* Info.plist */,
+				799C63C22376EE7800A64A1C /* Preview Content */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		799C63AE2376EE7600A64A1C = {
 			isa = PBXGroup;
 			children = (
@@ -101,13 +135,11 @@
 		799C63B92376EE7600A64A1C /* ARHome-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				79F13A9D239E554C006749A1 /* Views */,
+				797B3FED239FDF4B000FE5C6 /* Resources */,
+				797B3FF5239FDF94000FE5C6 /* Supporting Files */,
 				799C63BA2376EE7600A64A1C /* AppDelegate.swift */,
-				799C63BC2376EE7600A64A1C /* ContentView.swift */,
-				799C63BE2376EE7600A64A1C /* Experience.rcproject */,
 				799C63C02376EE7800A64A1C /* Assets.xcassets */,
-				799C63C52376EE7800A64A1C /* LaunchScreen.storyboard */,
-				799C63C82376EE7800A64A1C /* Info.plist */,
-				799C63C22376EE7800A64A1C /* Preview Content */,
 			);
 			path = "ARHome-iOS";
 			sourceTree = "<group>";
@@ -136,6 +168,15 @@
 				799C63DE2376EE7800A64A1C /* Info.plist */,
 			);
 			path = "ARHome-iOSUITests";
+			sourceTree = "<group>";
+		};
+		79F13A9D239E554C006749A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				799C63BC2376EE7600A64A1C /* ContentView.swift */,
+				79F13AA0239E9549006749A1 /* ARViewContainer.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,8 +284,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				799C63C72376EE7800A64A1C /* LaunchScreen.storyboard in Resources */,
+				797B3FF2239FDF4B000FE5C6 /* chair.usdz in Resources */,
 				799C63C42376EE7800A64A1C /* Preview Assets.xcassets in Resources */,
+				797B3FF4239FDF4B000FE5C6 /* tv.usdz in Resources */,
 				799C63C12376EE7800A64A1C /* Assets.xcassets in Resources */,
+				797B3FF3239FDF4B000FE5C6 /* gramophone.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +315,7 @@
 			files = (
 				799C63BD2376EE7600A64A1C /* ContentView.swift in Sources */,
 				799C63BB2376EE7600A64A1C /* AppDelegate.swift in Sources */,
-				799C63BF2376EE7600A64A1C /* Experience.rcproject in Sources */,
+				79F13AA1239E9549006749A1 /* ARViewContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
