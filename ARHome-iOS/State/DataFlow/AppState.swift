@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 struct AppState {
   
@@ -14,6 +15,8 @@ struct AppState {
   
   var typeList = TypeList()
   var objectList = ObjectList()
+  
+  var message = Message()
   
 }
 
@@ -43,5 +46,13 @@ extension AppState {
     func objects(typeID: Int) -> [Object]? {
       objects[typeID]
     }
+  }
+}
+
+extension AppState {
+  struct Message {
+    var content = ""
+    var isPresented = false
+    var hideDelay: Cancellable?
   }
 }

@@ -7,13 +7,25 @@
 //
 
 import Foundation
+import Combine
+import RealityKit
 
 enum AppAction {
   case openList
+  case closeList
+  
+  case scenceUpdate
+  
+  case loadEntity(name: String)
+  case loadEntityDone(result: Result<Entity, AppError>)
   
   case loadTypes
   case loadTypesDone(result: Result<[ObjectType], AppError>)
   
   case loadObjects(typeID: Int)
   case loadObjectsDone(typeID: Int, result: Result<[Object], AppError>)
+  
+  case showMessage(String, duration: TimeInterval?)
+  case hideMessage
+  case hideDelay(Cancellable)
 }

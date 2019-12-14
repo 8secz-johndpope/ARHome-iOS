@@ -17,6 +17,8 @@ class Store: ObservableObject {
     switch action {
     case .openList:
       appState.arState.isListActive = true
+    case .closeList:
+      appState.arState.isListActive = false
       
     case .loadTypes:
       guard !appState.typeList.typesRequesting else {
@@ -47,6 +49,16 @@ class Store: ObservableObject {
       case .failure(let error):
         appState.objectList.objectsError = error
       }
+      
+    case .showMessage(let message, let duration):
+      appState.message.content = message
+      appState.message.isPresented = true
+      appState.message.hideDelay = nil
+      appCommand = duration.map(HideMessageCommand.init)
+    case .hideMessage:
+      appState.message.isPresented = false
+    case .hideDelay(let cancellable):
+      appState.message.hideDelay = cancellable
     }
     
     return (appState, appCommand)

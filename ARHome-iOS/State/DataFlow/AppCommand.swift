@@ -44,3 +44,22 @@ struct LoadObjectsCommand: AppCommand {
     .disposed(by: disposeBag)
   }
 }
+
+struct HideMessageCommand: AppCommand {
+  let duration: TimeInterval
+  
+  func execute(in store: Store) {
+    let hideDelay = Future<Void, Never> { promise in
+      DispatchQueue.global()
+        .asyncAfter(deadline: .now() + self.duration) {
+          promise(.success(()))
+        }
+    }
+    .receive(on: DispatchQueue.main)
+    .sink {
+      store.dispatch(.hideMessage)
+    }
+    
+    store.dispatch(.hideDelay(hideDelay))
+  }
+}

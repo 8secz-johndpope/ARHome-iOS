@@ -13,7 +13,7 @@ struct LoadTypesRequest {
   var publisher: AnyPublisher<[ObjectType], AppError> {
     Future<[ObjectType], AppError> { promise in
       DispatchQueue.global()
-        .asyncAfter(deadline: .now() + 2) {
+        .asyncAfter(deadline: .now() + 1) {
           promise(.success(ObjectType.all))
         }
     }

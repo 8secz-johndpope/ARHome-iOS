@@ -15,7 +15,7 @@ struct LoadObjectsRequest {
   var publisher: AnyPublisher<[Object], AppError> {
     Future<[Object], AppError> { promise in
       DispatchQueue.global()
-        .asyncAfter(deadline: .now() + 2) {
+        .asyncAfter(deadline: .now() + 1) {
           promise(.success(Object.objects(typeID: self.typeID)))
         }
     }

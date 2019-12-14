@@ -54,6 +54,16 @@ struct ContentView : View {
       TypeListRoot()
         .environmentObject(self.store)
     }
+    .messageHUD(isPresented: self.$store.appState.message.isPresented) {
+      HStack {
+        Text(self.store.appState.message.content)
+          .fixedSize(horizontal: true, vertical: false)
+          .padding()
+        Spacer()
+      }
+      .blurBackground(style: .systemUltraThinMaterial, ignoringSafeAreaEdges: .top)
+      .fixedSize(horizontal: false, vertical: true)
+    }
   }
   
 }

@@ -31,11 +31,16 @@ struct ObjectGrid: View {
             self.store.dispatch(.loadObjects(typeID: self.typeID))
         }
       } else {
-        Grid(objects) {
-          ObjectGridItem(object: $0)
+        Grid(objects) { object in
+          ObjectGridItem(object: object)
+            .onTapGesture {
+              self.store.dispatch(.closeList)
+              self.store
+                .dispatch(.showMessage("点击了\(object.name)", duration: 2))
+            }
         }
         .gridStyle(
-          ModularGridStyle(columns: .count(2), rows: .min(160))
+          ModularGridStyle(columns: .count(2), rows: .min(180))
         )
       }
     }

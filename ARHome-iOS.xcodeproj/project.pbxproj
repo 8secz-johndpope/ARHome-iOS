@@ -15,6 +15,8 @@
 		792F3A9523A34649002A321D /* LoadTypesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3A9423A34649002A321D /* LoadTypesRequest.swift */; };
 		792F3A9723A3466A002A321D /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3A9623A3466A002A321D /* AppError.swift */; };
 		792F3A9923A34746002A321D /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3A9823A34746002A321D /* DisposeBag.swift */; };
+		794123CF23A4790400F1380C /* MessageHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794123CE23A4790400F1380C /* MessageHUD.swift */; };
+		794123D123A4795700F1380C /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794123D023A4795700F1380C /* BlurView.swift */; };
 		79691FDC23A324590005701E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79691FDB23A324590005701E /* Store.swift */; };
 		79691FDE23A324C00005701E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79691FDD23A324C00005701E /* AppState.swift */; };
 		79691FE023A324F30005701E /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79691FDF23A324F30005701E /* AppAction.swift */; };
@@ -68,6 +70,8 @@
 		792F3A9423A34649002A321D /* LoadTypesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTypesRequest.swift; sourceTree = "<group>"; };
 		792F3A9623A3466A002A321D /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		792F3A9823A34746002A321D /* DisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
+		794123CE23A4790400F1380C /* MessageHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHUD.swift; sourceTree = "<group>"; };
+		794123D023A4795700F1380C /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		79691FDB23A324590005701E /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		79691FDD23A324C00005701E /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		79691FDF23A324F30005701E /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
@@ -163,6 +167,15 @@
 				7983BE7623A374D10063BEAE /* LoadObjectsRequest.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		794123CD23A478E500F1380C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				794123D023A4795700F1380C /* BlurView.swift */,
+				794123CE23A4790400F1380C /* MessageHUD.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		79691FD923A3242F0005701E /* DataFlow */ = {
@@ -301,9 +314,10 @@
 		79F13A9D239E554C006749A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				799C63BC2376EE7600A64A1C /* ContentView.swift */,
 				7983BE6523A3659E0063BEAE /* AR */,
 				79691FE423A327290005701E /* List */,
-				799C63BC2376EE7600A64A1C /* ContentView.swift */,
+				794123CD23A478E500F1380C /* Utils */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -453,6 +467,7 @@
 			files = (
 				792F3A8323A3338D002A321D /* ObjectType.swift in Sources */,
 				792F3A8F23A34402002A321D /* Sample.swift in Sources */,
+				794123D123A4795700F1380C /* BlurView.swift in Sources */,
 				799C63BD2376EE7600A64A1C /* ContentView.swift in Sources */,
 				79691FE023A324F30005701E /* AppAction.swift in Sources */,
 				79691FE623A327400005701E /* TypeListRow.swift in Sources */,
@@ -460,6 +475,7 @@
 				7983BE6723A3659E0063BEAE /* ARViewContainer.swift in Sources */,
 				792F3A9723A3466A002A321D /* AppError.swift in Sources */,
 				7983BE7923A380C10063BEAE /* ObjectGridItem.swift in Sources */,
+				794123CF23A4790400F1380C /* MessageHUD.swift in Sources */,
 				792F3A9523A34649002A321D /* LoadTypesRequest.swift in Sources */,
 				7983BE7523A373D90063BEAE /* Object.swift in Sources */,
 				7983BE7723A374D10063BEAE /* LoadObjectsRequest.swift in Sources */,
