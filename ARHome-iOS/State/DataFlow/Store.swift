@@ -15,7 +15,13 @@ class Store: ObservableObject {
     var appCommand: AppCommand?
     
     switch action {
+    case .openList:
+      appState.arState.isListActive = true
+      
     case .loadTypes:
+      guard !appState.typeList.typesRequesting else {
+        break
+      }
       appState.typeList.typesRequesting = true
       appCommand = LoadTypesCommand()
     case .loadTypesDone(let result):
@@ -25,6 +31,21 @@ class Store: ObservableObject {
         appState.typeList.types = types
       case .failure(let error):
         appState.typeList.typesError = error
+      }
+      
+    case .loadObjects(let typeID):
+      guard !appState.objectList.objectsRequesting else {
+        break
+      }
+      appState.objectList.objectsRequesting = true
+      appCommand = LoadObjectsCommand(typeID: typeID)
+    case .loadObjectsDone(let typeID, let result):
+      appState.objectList.objectsRequesting = false
+      switch result {
+      case .success(let objects):
+        appState.objectList.objects[typeID] = objects
+      case .failure(let error):
+        appState.objectList.objectsError = error
       }
     }
     

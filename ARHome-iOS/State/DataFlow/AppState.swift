@@ -10,8 +10,18 @@ import Foundation
 
 struct AppState {
   
-  var typeList = TypeList()
+  var arState = ARState()
   
+  var typeList = TypeList()
+  var objectList = ObjectList()
+  
+}
+
+extension AppState {
+  struct ARState {
+    var isListActive = false
+    var isCoachingActived = false
+  }
 }
 
 extension AppState {
@@ -20,5 +30,18 @@ extension AppState {
     
     var typesRequesting = false
     var typesError: AppError?
+  }
+}
+
+extension AppState {
+  struct ObjectList {
+    var objects: [Int: [Object]] = [:]
+    
+    var objectsRequesting = false
+    var objectsError: AppError?
+    
+    func objects(typeID: Int) -> [Object]? {
+      objects[typeID]
+    }
   }
 }

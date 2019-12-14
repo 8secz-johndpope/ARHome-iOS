@@ -20,9 +20,16 @@
 		79691FE023A324F30005701E /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79691FDF23A324F30005701E /* AppAction.swift */; };
 		79691FE223A325040005701E /* AppCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79691FE123A325040005701E /* AppCommand.swift */; };
 		79691FE623A327400005701E /* TypeListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79691FE523A327400005701E /* TypeListRow.swift */; };
-		797B3FF2239FDF4B000FE5C6 /* chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 797B3FEF239FDF4B000FE5C6 /* chair.usdz */; };
-		797B3FF3239FDF4B000FE5C6 /* gramophone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 797B3FF0239FDF4B000FE5C6 /* gramophone.usdz */; };
-		797B3FF4239FDF4B000FE5C6 /* tv.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 797B3FF1239FDF4B000FE5C6 /* tv.usdz */; };
+		797B3FF2239FDF4B000FE5C6 /* red_chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 797B3FEF239FDF4B000FE5C6 /* red_chair.usdz */; };
+		7983BE6723A3659E0063BEAE /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE6623A3659E0063BEAE /* ARViewContainer.swift */; };
+		7983BE6923A365E00063BEAE /* ObjectGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE6823A365E00063BEAE /* ObjectGrid.swift */; };
+		7983BE6D23A370AB0063BEAE /* flower_tulip.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7983BE6C23A370AB0063BEAE /* flower_tulip.usdz */; };
+		7983BE6F23A370B30063BEAE /* cup_saucer_set.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7983BE6E23A370B30063BEAE /* cup_saucer_set.usdz */; };
+		7983BE7123A371370063BEAE /* loveseat.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7983BE7023A371370063BEAE /* loveseat.usdz */; };
+		7983BE7323A373540063BEAE /* objects.json in Resources */ = {isa = PBXBuildFile; fileRef = 7983BE7223A373540063BEAE /* objects.json */; };
+		7983BE7523A373D90063BEAE /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE7423A373D90063BEAE /* Object.swift */; };
+		7983BE7723A374D10063BEAE /* LoadObjectsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE7623A374D10063BEAE /* LoadObjectsRequest.swift */; };
+		7983BE7923A380C10063BEAE /* ObjectGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE7823A380C10063BEAE /* ObjectGridItem.swift */; };
 		799C63BB2376EE7600A64A1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C63BA2376EE7600A64A1C /* AppDelegate.swift */; };
 		799C63BD2376EE7600A64A1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C63BC2376EE7600A64A1C /* ContentView.swift */; };
 		799C63C12376EE7800A64A1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799C63C02376EE7800A64A1C /* Assets.xcassets */; };
@@ -33,7 +40,6 @@
 		79D6539C23A34B8100B25C93 /* TypeListRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D6539B23A34B8100B25C93 /* TypeListRoot.swift */; };
 		79D6539E23A34B8F00B25C93 /* TypeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D6539D23A34B8F00B25C93 /* TypeList.swift */; };
 		79D653A123A35EAD00B25C93 /* Grid in Frameworks */ = {isa = PBXBuildFile; productRef = 79D653A023A35EAD00B25C93 /* Grid */; };
-		79F13AA1239E9549006749A1 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F13AA0239E9549006749A1 /* ARViewContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +73,16 @@
 		79691FDF23A324F30005701E /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		79691FE123A325040005701E /* AppCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommand.swift; sourceTree = "<group>"; };
 		79691FE523A327400005701E /* TypeListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeListRow.swift; sourceTree = "<group>"; };
-		797B3FEF239FDF4B000FE5C6 /* chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = chair.usdz; sourceTree = "<group>"; };
-		797B3FF0239FDF4B000FE5C6 /* gramophone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = gramophone.usdz; sourceTree = "<group>"; };
-		797B3FF1239FDF4B000FE5C6 /* tv.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tv.usdz; sourceTree = "<group>"; };
+		797B3FEF239FDF4B000FE5C6 /* red_chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = red_chair.usdz; sourceTree = "<group>"; };
+		7983BE6623A3659E0063BEAE /* ARViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		7983BE6823A365E00063BEAE /* ObjectGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectGrid.swift; sourceTree = "<group>"; };
+		7983BE6C23A370AB0063BEAE /* flower_tulip.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = flower_tulip.usdz; sourceTree = "<group>"; };
+		7983BE6E23A370B30063BEAE /* cup_saucer_set.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = cup_saucer_set.usdz; sourceTree = "<group>"; };
+		7983BE7023A371370063BEAE /* loveseat.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = loveseat.usdz; sourceTree = "<group>"; };
+		7983BE7223A373540063BEAE /* objects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = objects.json; sourceTree = "<group>"; };
+		7983BE7423A373D90063BEAE /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		7983BE7623A374D10063BEAE /* LoadObjectsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadObjectsRequest.swift; sourceTree = "<group>"; };
+		7983BE7823A380C10063BEAE /* ObjectGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectGridItem.swift; sourceTree = "<group>"; };
 		799C63B72376EE7600A64A1C /* ARHome-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARHome-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		799C63BA2376EE7600A64A1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		799C63BC2376EE7600A64A1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,7 +99,6 @@
 		799C63EA2376F88700A64A1C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		79D6539B23A34B8100B25C93 /* TypeListRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeListRoot.swift; sourceTree = "<group>"; };
 		79D6539D23A34B8F00B25C93 /* TypeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeList.swift; sourceTree = "<group>"; };
-		79F13AA0239E9549006749A1 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				792F3A8C23A343DF002A321D /* types.json */,
+				7983BE7223A373540063BEAE /* objects.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -147,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				792F3A9423A34649002A321D /* LoadTypesRequest.swift */,
+				7983BE7623A374D10063BEAE /* LoadObjectsRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -167,27 +181,21 @@
 			isa = PBXGroup;
 			children = (
 				792F3A8223A3338D002A321D /* ObjectType.swift */,
+				7983BE7423A373D90063BEAE /* Object.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		79691FE323A3271E0005701E /* AR */ = {
-			isa = PBXGroup;
-			children = (
-				79F13AA0239E9549006749A1 /* ARViewContainer.swift */,
-			);
-			name = AR;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		79691FE423A327290005701E /* TypeList */ = {
+		79691FE423A327290005701E /* List */ = {
 			isa = PBXGroup;
 			children = (
 				79D6539B23A34B8100B25C93 /* TypeListRoot.swift */,
 				79D6539D23A34B8F00B25C93 /* TypeList.swift */,
 				79691FE523A327400005701E /* TypeListRow.swift */,
+				7983BE6823A365E00063BEAE /* ObjectGrid.swift */,
+				7983BE7823A380C10063BEAE /* ObjectGridItem.swift */,
 			);
-			path = TypeList;
+			path = List;
 			sourceTree = "<group>";
 		};
 		797B3FED239FDF4B000FE5C6 /* Resources */ = {
@@ -202,9 +210,10 @@
 		797B3FEE239FDF4B000FE5C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				797B3FEF239FDF4B000FE5C6 /* chair.usdz */,
-				797B3FF0239FDF4B000FE5C6 /* gramophone.usdz */,
-				797B3FF1239FDF4B000FE5C6 /* tv.usdz */,
+				797B3FEF239FDF4B000FE5C6 /* red_chair.usdz */,
+				7983BE6C23A370AB0063BEAE /* flower_tulip.usdz */,
+				7983BE6E23A370B30063BEAE /* cup_saucer_set.usdz */,
+				7983BE7023A371370063BEAE /* loveseat.usdz */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,6 +226,14 @@
 				799C63C22376EE7800A64A1C /* Preview Content */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7983BE6523A3659E0063BEAE /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				7983BE6623A3659E0063BEAE /* ARViewContainer.swift */,
+			);
+			path = AR;
 			sourceTree = "<group>";
 		};
 		799C63AE2376EE7600A64A1C = {
@@ -284,8 +301,8 @@
 		79F13A9D239E554C006749A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				79691FE423A327290005701E /* TypeList */,
-				79691FE323A3271E0005701E /* AR */,
+				7983BE6523A3659E0063BEAE /* AR */,
+				79691FE423A327290005701E /* List */,
 				799C63BC2376EE7600A64A1C /* ContentView.swift */,
 			);
 			path = Views;
@@ -401,13 +418,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7983BE7323A373540063BEAE /* objects.json in Resources */,
 				792F3A8D23A343DF002A321D /* types.json in Resources */,
+				7983BE6F23A370B30063BEAE /* cup_saucer_set.usdz in Resources */,
 				799C63C72376EE7800A64A1C /* LaunchScreen.storyboard in Resources */,
-				797B3FF2239FDF4B000FE5C6 /* chair.usdz in Resources */,
+				797B3FF2239FDF4B000FE5C6 /* red_chair.usdz in Resources */,
+				7983BE7123A371370063BEAE /* loveseat.usdz in Resources */,
+				7983BE6D23A370AB0063BEAE /* flower_tulip.usdz in Resources */,
 				799C63C42376EE7800A64A1C /* Preview Assets.xcassets in Resources */,
-				797B3FF4239FDF4B000FE5C6 /* tv.usdz in Resources */,
 				799C63C12376EE7800A64A1C /* Assets.xcassets in Resources */,
-				797B3FF3239FDF4B000FE5C6 /* gramophone.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,15 +457,19 @@
 				79691FE023A324F30005701E /* AppAction.swift in Sources */,
 				79691FE623A327400005701E /* TypeListRow.swift in Sources */,
 				792F3A8923A34335002A321D /* FileHelper.swift in Sources */,
+				7983BE6723A3659E0063BEAE /* ARViewContainer.swift in Sources */,
 				792F3A9723A3466A002A321D /* AppError.swift in Sources */,
+				7983BE7923A380C10063BEAE /* ObjectGridItem.swift in Sources */,
 				792F3A9523A34649002A321D /* LoadTypesRequest.swift in Sources */,
+				7983BE7523A373D90063BEAE /* Object.swift in Sources */,
+				7983BE7723A374D10063BEAE /* LoadObjectsRequest.swift in Sources */,
 				792F3A9923A34746002A321D /* DisposeBag.swift in Sources */,
 				79D6539E23A34B8F00B25C93 /* TypeList.swift in Sources */,
 				79691FE223A325040005701E /* AppCommand.swift in Sources */,
+				7983BE6923A365E00063BEAE /* ObjectGrid.swift in Sources */,
 				79691FDE23A324C00005701E /* AppState.swift in Sources */,
 				799C63BB2376EE7600A64A1C /* AppDelegate.swift in Sources */,
 				792F3A8723A34307002A321D /* Helpers.swift in Sources */,
-				79F13AA1239E9549006749A1 /* ARViewContainer.swift in Sources */,
 				79691FDC23A324590005701E /* Store.swift in Sources */,
 				79D6539C23A34B8100B25C93 /* TypeListRoot.swift in Sources */,
 			);

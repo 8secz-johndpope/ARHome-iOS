@@ -11,31 +11,55 @@ import RealityKit
 
 struct ContentView : View {
   
-  @State var isCoachingActived = false
+  @EnvironmentObject var store: Store
   
-  #if arch(arm64)
-  var body: some View {
-    ARViewContainer(isCoachingActived: $isCoachingActived)
-      .edgesIgnoringSafeArea(.all)
-      .onAppear {
-        UIApplication.shared.isIdleTimerDisabled = true
-      }
-      .onDisappear {
-        UIApplication.shared.isIdleTimerDisabled = false
-      }
-      .statusBar(hidden: true)
+  var arState: AppState.ARState {
+    store.appState.arState
   }
-  #else
-  var body: some View {
-    EmptyView()
+  
+  var arStateBinding: Binding<AppState.ARState> {
+    $store.appState.arState
   }
-  #endif
-
+  
+  var body: some View {
+    ZStack(alignment: .bottom) {
+      #if arch(arm64)
+      ARViewContainer(isCoachingActived: arStateBinding.isCoachingActived)
+        .edgesIgnoringSafeArea(.all)
+        .onAppear {
+          UIApplication.shared.isIdleTimerDisabled = true
+        }
+        .onDisappear {
+          UIApplication.shared.isIdleTimerDisabled = false
+        }
+        .statusBar(hidden: true)
+      #else
+      Rectangle()
+        .fill(Color.gray)
+        .edgesIgnoringSafeArea(.all)
+      #endif
+      
+      if !arState.isCoachingActived {
+        Button(action: {
+          self.store.dispatch(.openList)
+        }) {
+          Image(systemName: "plus.circle")
+            .font(.system(size: 44))
+            .foregroundColor(.white)
+            .padding()
+        }
+      }
+    }
+    .sheet(isPresented: arStateBinding.isListActive) {
+      TypeListRoot()
+        .environmentObject(self.store)
+    }
+  }
   
 }
 
 struct ContentView_Previews : PreviewProvider {
   static var previews: some View {
-    ContentView()
+    ContentView().environmentObject(Store())
   }
 }

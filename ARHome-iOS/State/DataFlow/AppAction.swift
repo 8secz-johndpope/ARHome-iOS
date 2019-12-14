@@ -9,6 +9,11 @@
 import Foundation
 
 enum AppAction {
+  case openList
+  
   case loadTypes
   case loadTypesDone(result: Result<[ObjectType], AppError>)
+  
+  case loadObjects(typeID: Int)
+  case loadObjectsDone(typeID: Int, result: Result<[Object], AppError>)
 }

@@ -1,0 +1,11 @@
+[
+    {"id": 1, "name": "红色椅子", "typeID": 1, "imageName": "red_chair", "modelName": "red_chair"},
+    {"id": 2, "name": "郁金香", "typeID": 3, "imageName": "tulip", "modelName": "flower_tulip"},
+    {"id": 3, "name": "咖啡杯", "typeID": 3, "imageName": "cup_and_saucer", "modelName": "cup_saucer_set"},
+    {"id": 4, "name": "双人沙发", "typeID": 2, "imageName": "loveseat", "modelName": "loveseat"},
+    {"id": 5, "name": "咖啡杯", "typeID": 3, "imageName": "cup_and_saucer", "modelName": "cup_saucer_set"},
+    {"id": 6, "name": "咖啡杯", "typeID": 3, "imageName": "cup_and_saucer", "modelName": "cup_saucer_set"},
+    {"id": 7, "name": "咖啡杯", "typeID": 3, "imageName": "cup_and_saucer", "modelName": "cup_saucer_set"},
+    {"id": 8, "name": "咖啡杯", "typeID": 3, "imageName": "cup_and_saucer", "modelName": "cup_saucer_set"},
+    {"id": 9, "name": "咖啡杯", "typeID": 3, "imageName": "cup_and_saucer", "modelName": "cup_saucer_set"}
+]
