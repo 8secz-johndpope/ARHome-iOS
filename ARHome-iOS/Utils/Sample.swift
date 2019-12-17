@@ -14,13 +14,13 @@ extension ObjectType {
   }
   
   static var all: [ObjectType] {
-    FileHelper.loadBundledJSON(file: "types")
+    FileHelper.loadBundledJSON(file: "Types")
   }
 }
 
 extension Object {
   static var all: [Object] {
-    FileHelper.loadBundledJSON(file: "objects")
+    FileHelper.loadBundledJSON(file: "Objects")
   }
   
   static func objects(typeID: Int) -> [Object] {

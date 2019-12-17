@@ -24,7 +24,7 @@ struct ContentView : View {
   var body: some View {
     ZStack(alignment: .bottom) {
       #if arch(arm64)
-      ARViewContainer(isCoachingActived: arStateBinding.isCoachingActived)
+      ARViewContainer(unanchoredModel: arStateBinding.unanchoredEntity)
         .edgesIgnoringSafeArea(.all)
         .onAppear {
           UIApplication.shared.isIdleTimerDisabled = true
@@ -39,7 +39,7 @@ struct ContentView : View {
         .edgesIgnoringSafeArea(.all)
       #endif
       
-      if !arState.isCoachingActived {
+      if !arState.isCoachingActive && !arState.modelLoading && arState.unanchoredEntity == nil {
         Button(action: {
           self.store.dispatch(.openList)
         }) {
@@ -61,7 +61,7 @@ struct ContentView : View {
           .padding()
         Spacer()
       }
-      .blurBackground(style: .systemUltraThinMaterial, ignoringSafeAreaEdges: .top)
+      .blurBackground(style: .systemUltraThinMaterial, ignoringSafeAreaEdges: .all)
       .fixedSize(horizontal: false, vertical: true)
     }
   }

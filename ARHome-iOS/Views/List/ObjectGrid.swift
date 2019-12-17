@@ -34,13 +34,16 @@ struct ObjectGrid: View {
         Grid(objects) { object in
           ObjectGridItem(object: object)
             .onTapGesture {
-              self.store.dispatch(.closeList)
+              guard let model = object.model else {
+                return
+              }
               self.store
-                .dispatch(.showMessage("点击了\(object.name)", duration: 2))
+                .dispatch(.loadModel(model))
+              self.store.dispatch(.closeList)
             }
         }
         .gridStyle(
-          ModularGridStyle(columns: .count(2), rows: .min(180))
+          ModularGridStyle(columns: .count(2), rows: .min(200))
         )
       }
     }

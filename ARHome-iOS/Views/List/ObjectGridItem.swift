@@ -13,11 +13,20 @@ struct ObjectGridItem: View {
   
   var body: some View {
     VStack(alignment: .leading) {
-      Image(object.imageName)
-        .resizable()
-        .aspectRatio(contentMode: .fit)
-        .frame(width: 150, height: 150)
-        .shadow(radius: 8)
+      ZStack(alignment: .topLeading) {
+        Image(object.thumbnail)
+          .resizable()
+          .aspectRatio(contentMode: .fit)
+          .frame(width: 150, height: 150)
+          .shadow(radius: 8)
+        if object.model != nil {
+          Image("ARKit-Badge")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(height: 30)
+            .padding([.leading, .top], 8)
+        }
+      }
       Text(object.name)
         .font(.footnote)
         .bold()

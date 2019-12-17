@@ -10,7 +10,6 @@
 		792F3A8323A3338D002A321D /* ObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3A8223A3338D002A321D /* ObjectType.swift */; };
 		792F3A8723A34307002A321D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3A8623A34307002A321D /* Helpers.swift */; };
 		792F3A8923A34335002A321D /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3A8823A34335002A321D /* FileHelper.swift */; };
-		792F3A8D23A343DF002A321D /* types.json in Resources */ = {isa = PBXBuildFile; fileRef = 792F3A8C23A343DF002A321D /* types.json */; };
 		792F3A8F23A34402002A321D /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3A8E23A34402002A321D /* Sample.swift */; };
 		792F3A9523A34649002A321D /* LoadTypesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3A9423A34649002A321D /* LoadTypesRequest.swift */; };
 		792F3A9723A3466A002A321D /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3A9623A3466A002A321D /* AppError.swift */; };
@@ -22,13 +21,8 @@
 		79691FE023A324F30005701E /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79691FDF23A324F30005701E /* AppAction.swift */; };
 		79691FE223A325040005701E /* AppCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79691FE123A325040005701E /* AppCommand.swift */; };
 		79691FE623A327400005701E /* TypeListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79691FE523A327400005701E /* TypeListRow.swift */; };
-		797B3FF2239FDF4B000FE5C6 /* red_chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 797B3FEF239FDF4B000FE5C6 /* red_chair.usdz */; };
 		7983BE6723A3659E0063BEAE /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE6623A3659E0063BEAE /* ARViewContainer.swift */; };
 		7983BE6923A365E00063BEAE /* ObjectGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE6823A365E00063BEAE /* ObjectGrid.swift */; };
-		7983BE6D23A370AB0063BEAE /* flower_tulip.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7983BE6C23A370AB0063BEAE /* flower_tulip.usdz */; };
-		7983BE6F23A370B30063BEAE /* cup_saucer_set.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7983BE6E23A370B30063BEAE /* cup_saucer_set.usdz */; };
-		7983BE7123A371370063BEAE /* loveseat.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7983BE7023A371370063BEAE /* loveseat.usdz */; };
-		7983BE7323A373540063BEAE /* objects.json in Resources */ = {isa = PBXBuildFile; fileRef = 7983BE7223A373540063BEAE /* objects.json */; };
 		7983BE7523A373D90063BEAE /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE7423A373D90063BEAE /* Object.swift */; };
 		7983BE7723A374D10063BEAE /* LoadObjectsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE7623A374D10063BEAE /* LoadObjectsRequest.swift */; };
 		7983BE7923A380C10063BEAE /* ObjectGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE7823A380C10063BEAE /* ObjectGridItem.swift */; };
@@ -39,6 +33,19 @@
 		799C63C72376EE7800A64A1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799C63C52376EE7800A64A1C /* LaunchScreen.storyboard */; };
 		799C63D22376EE7800A64A1C /* ARHome_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C63D12376EE7800A64A1C /* ARHome_iOSTests.swift */; };
 		799C63DD2376EE7800A64A1C /* ARHome_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C63DC2376EE7800A64A1C /* ARHome_iOSUITests.swift */; };
+		79A0E75223A7B816003F6F84 /* Tables.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 79A0E75123A7B816003F6F84 /* Tables.rcproject */; };
+		79A0E75423A7B95A003F6F84 /* LoadModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0E75323A7B95A003F6F84 /* LoadModelRequest.swift */; };
+		79AB621423A5FAB600D20AF3 /* Objects.json in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621223A5FAB500D20AF3 /* Objects.json */; };
+		79AB621523A5FAB600D20AF3 /* Types.json in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621323A5FAB600D20AF3 /* Types.json */; };
+		79AB622423A5FAD900D20AF3 /* CupSaucerSet.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621823A5FAD900D20AF3 /* CupSaucerSet.usdz */; };
+		79AB622523A5FAD900D20AF3 /* PeriodicTable.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621923A5FAD900D20AF3 /* PeriodicTable.usdz */; };
+		79AB622623A5FAD900D20AF3 /* Laptop.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621A23A5FAD900D20AF3 /* Laptop.usdz */; };
+		79AB622723A5FAD900D20AF3 /* Tulip.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621B23A5FAD900D20AF3 /* Tulip.usdz */; };
+		79AB622823A5FAD900D20AF3 /* FoldableChair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621D23A5FAD900D20AF3 /* FoldableChair.usdz */; };
+		79AB622923A5FAD900D20AF3 /* RedChair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621E23A5FAD900D20AF3 /* RedChair.usdz */; };
+		79AB622A23A5FAD900D20AF3 /* Loveseat.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB622023A5FAD900D20AF3 /* Loveseat.usdz */; };
+		79AB622B23A5FAD900D20AF3 /* EndTable.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB622223A5FAD900D20AF3 /* EndTable.usdz */; };
+		79AB622C23A5FAD900D20AF3 /* Desk.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB622323A5FAD900D20AF3 /* Desk.usdz */; };
 		79D6539C23A34B8100B25C93 /* TypeListRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D6539B23A34B8100B25C93 /* TypeListRoot.swift */; };
 		79D6539E23A34B8F00B25C93 /* TypeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D6539D23A34B8F00B25C93 /* TypeList.swift */; };
 		79D653A123A35EAD00B25C93 /* Grid in Frameworks */ = {isa = PBXBuildFile; productRef = 79D653A023A35EAD00B25C93 /* Grid */; };
@@ -65,7 +72,6 @@
 		792F3A8223A3338D002A321D /* ObjectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectType.swift; sourceTree = "<group>"; };
 		792F3A8623A34307002A321D /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		792F3A8823A34335002A321D /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
-		792F3A8C23A343DF002A321D /* types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = types.json; sourceTree = "<group>"; };
 		792F3A8E23A34402002A321D /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		792F3A9423A34649002A321D /* LoadTypesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTypesRequest.swift; sourceTree = "<group>"; };
 		792F3A9623A3466A002A321D /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -77,13 +83,8 @@
 		79691FDF23A324F30005701E /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		79691FE123A325040005701E /* AppCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommand.swift; sourceTree = "<group>"; };
 		79691FE523A327400005701E /* TypeListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeListRow.swift; sourceTree = "<group>"; };
-		797B3FEF239FDF4B000FE5C6 /* red_chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = red_chair.usdz; sourceTree = "<group>"; };
 		7983BE6623A3659E0063BEAE /* ARViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 		7983BE6823A365E00063BEAE /* ObjectGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectGrid.swift; sourceTree = "<group>"; };
-		7983BE6C23A370AB0063BEAE /* flower_tulip.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = flower_tulip.usdz; sourceTree = "<group>"; };
-		7983BE6E23A370B30063BEAE /* cup_saucer_set.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = cup_saucer_set.usdz; sourceTree = "<group>"; };
-		7983BE7023A371370063BEAE /* loveseat.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = loveseat.usdz; sourceTree = "<group>"; };
-		7983BE7223A373540063BEAE /* objects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = objects.json; sourceTree = "<group>"; };
 		7983BE7423A373D90063BEAE /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		7983BE7623A374D10063BEAE /* LoadObjectsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadObjectsRequest.swift; sourceTree = "<group>"; };
 		7983BE7823A380C10063BEAE /* ObjectGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectGridItem.swift; sourceTree = "<group>"; };
@@ -101,6 +102,19 @@
 		799C63DC2376EE7800A64A1C /* ARHome_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARHome_iOSUITests.swift; sourceTree = "<group>"; };
 		799C63DE2376EE7800A64A1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		799C63EA2376F88700A64A1C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		79A0E75123A7B816003F6F84 /* Tables.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Tables.rcproject; sourceTree = "<group>"; };
+		79A0E75323A7B95A003F6F84 /* LoadModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadModelRequest.swift; sourceTree = "<group>"; };
+		79AB621223A5FAB500D20AF3 /* Objects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Objects.json; sourceTree = "<group>"; };
+		79AB621323A5FAB600D20AF3 /* Types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Types.json; sourceTree = "<group>"; };
+		79AB621823A5FAD900D20AF3 /* CupSaucerSet.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = CupSaucerSet.usdz; sourceTree = "<group>"; };
+		79AB621923A5FAD900D20AF3 /* PeriodicTable.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = PeriodicTable.usdz; sourceTree = "<group>"; };
+		79AB621A23A5FAD900D20AF3 /* Laptop.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Laptop.usdz; sourceTree = "<group>"; };
+		79AB621B23A5FAD900D20AF3 /* Tulip.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Tulip.usdz; sourceTree = "<group>"; };
+		79AB621D23A5FAD900D20AF3 /* FoldableChair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = FoldableChair.usdz; sourceTree = "<group>"; };
+		79AB621E23A5FAD900D20AF3 /* RedChair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RedChair.usdz; sourceTree = "<group>"; };
+		79AB622023A5FAD900D20AF3 /* Loveseat.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Loveseat.usdz; sourceTree = "<group>"; };
+		79AB622223A5FAD900D20AF3 /* EndTable.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = EndTable.usdz; sourceTree = "<group>"; };
+		79AB622323A5FAD900D20AF3 /* Desk.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Desk.usdz; sourceTree = "<group>"; };
 		79D6539B23A34B8100B25C93 /* TypeListRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeListRoot.swift; sourceTree = "<group>"; };
 		79D6539D23A34B8F00B25C93 /* TypeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,8 +148,8 @@
 		792F3A8423A34242002A321D /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				792F3A8C23A343DF002A321D /* types.json */,
-				7983BE7223A373540063BEAE /* objects.json */,
+				79AB621223A5FAB500D20AF3 /* Objects.json */,
+				79AB621323A5FAB600D20AF3 /* Types.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -165,6 +179,7 @@
 			children = (
 				792F3A9423A34649002A321D /* LoadTypesRequest.swift */,
 				7983BE7623A374D10063BEAE /* LoadObjectsRequest.swift */,
+				79A0E75323A7B95A003F6F84 /* LoadModelRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -214,21 +229,11 @@
 		797B3FED239FDF4B000FE5C6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				79A0E75123A7B816003F6F84 /* Tables.rcproject */,
+				79AB621623A5FAD900D20AF3 /* USDZs */,
 				792F3A8423A34242002A321D /* JSON */,
-				797B3FEE239FDF4B000FE5C6 /* Models */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		797B3FEE239FDF4B000FE5C6 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				797B3FEF239FDF4B000FE5C6 /* red_chair.usdz */,
-				7983BE6C23A370AB0063BEAE /* flower_tulip.usdz */,
-				7983BE6E23A370B30063BEAE /* cup_saucer_set.usdz */,
-				7983BE7023A371370063BEAE /* loveseat.usdz */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		797B3FF5239FDF94000FE5C6 /* Supporting Files */ = {
@@ -309,6 +314,54 @@
 				799C63DE2376EE7800A64A1C /* Info.plist */,
 			);
 			path = "ARHome-iOSUITests";
+			sourceTree = "<group>";
+		};
+		79AB621623A5FAD900D20AF3 /* USDZs */ = {
+			isa = PBXGroup;
+			children = (
+				79AB621723A5FAD900D20AF3 /* Decoration */,
+				79AB621C23A5FAD900D20AF3 /* Chair */,
+				79AB621F23A5FAD900D20AF3 /* Sofa */,
+				79AB622123A5FAD900D20AF3 /* Table */,
+			);
+			path = USDZs;
+			sourceTree = "<group>";
+		};
+		79AB621723A5FAD900D20AF3 /* Decoration */ = {
+			isa = PBXGroup;
+			children = (
+				79AB621823A5FAD900D20AF3 /* CupSaucerSet.usdz */,
+				79AB621923A5FAD900D20AF3 /* PeriodicTable.usdz */,
+				79AB621A23A5FAD900D20AF3 /* Laptop.usdz */,
+				79AB621B23A5FAD900D20AF3 /* Tulip.usdz */,
+			);
+			path = Decoration;
+			sourceTree = "<group>";
+		};
+		79AB621C23A5FAD900D20AF3 /* Chair */ = {
+			isa = PBXGroup;
+			children = (
+				79AB621D23A5FAD900D20AF3 /* FoldableChair.usdz */,
+				79AB621E23A5FAD900D20AF3 /* RedChair.usdz */,
+			);
+			path = Chair;
+			sourceTree = "<group>";
+		};
+		79AB621F23A5FAD900D20AF3 /* Sofa */ = {
+			isa = PBXGroup;
+			children = (
+				79AB622023A5FAD900D20AF3 /* Loveseat.usdz */,
+			);
+			path = Sofa;
+			sourceTree = "<group>";
+		};
+		79AB622123A5FAD900D20AF3 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				79AB622223A5FAD900D20AF3 /* EndTable.usdz */,
+				79AB622323A5FAD900D20AF3 /* Desk.usdz */,
+			);
+			path = Table;
 			sourceTree = "<group>";
 		};
 		79F13A9D239E554C006749A1 /* Views */ = {
@@ -432,14 +485,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7983BE7323A373540063BEAE /* objects.json in Resources */,
-				792F3A8D23A343DF002A321D /* types.json in Resources */,
-				7983BE6F23A370B30063BEAE /* cup_saucer_set.usdz in Resources */,
 				799C63C72376EE7800A64A1C /* LaunchScreen.storyboard in Resources */,
-				797B3FF2239FDF4B000FE5C6 /* red_chair.usdz in Resources */,
-				7983BE7123A371370063BEAE /* loveseat.usdz in Resources */,
-				7983BE6D23A370AB0063BEAE /* flower_tulip.usdz in Resources */,
+				79AB622523A5FAD900D20AF3 /* PeriodicTable.usdz in Resources */,
+				79AB622923A5FAD900D20AF3 /* RedChair.usdz in Resources */,
+				79AB622A23A5FAD900D20AF3 /* Loveseat.usdz in Resources */,
+				79AB622B23A5FAD900D20AF3 /* EndTable.usdz in Resources */,
 				799C63C42376EE7800A64A1C /* Preview Assets.xcassets in Resources */,
+				79AB622623A5FAD900D20AF3 /* Laptop.usdz in Resources */,
+				79AB622723A5FAD900D20AF3 /* Tulip.usdz in Resources */,
+				79AB621523A5FAB600D20AF3 /* Types.json in Resources */,
+				79AB621423A5FAB600D20AF3 /* Objects.json in Resources */,
+				79AB622C23A5FAD900D20AF3 /* Desk.usdz in Resources */,
+				79AB622423A5FAD900D20AF3 /* CupSaucerSet.usdz in Resources */,
+				79AB622823A5FAD900D20AF3 /* FoldableChair.usdz in Resources */,
 				799C63C12376EE7800A64A1C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +533,7 @@
 				7983BE6723A3659E0063BEAE /* ARViewContainer.swift in Sources */,
 				792F3A9723A3466A002A321D /* AppError.swift in Sources */,
 				7983BE7923A380C10063BEAE /* ObjectGridItem.swift in Sources */,
+				79A0E75423A7B95A003F6F84 /* LoadModelRequest.swift in Sources */,
 				794123CF23A4790400F1380C /* MessageHUD.swift in Sources */,
 				792F3A9523A34649002A321D /* LoadTypesRequest.swift in Sources */,
 				7983BE7523A373D90063BEAE /* Object.swift in Sources */,
@@ -486,6 +545,7 @@
 				79691FDE23A324C00005701E /* AppState.swift in Sources */,
 				799C63BB2376EE7600A64A1C /* AppDelegate.swift in Sources */,
 				792F3A8723A34307002A321D /* Helpers.swift in Sources */,
+				79A0E75223A7B816003F6F84 /* Tables.rcproject in Sources */,
 				79691FDC23A324590005701E /* Store.swift in Sources */,
 				79D6539C23A34B8100B25C93 /* TypeListRoot.swift in Sources */,
 			);

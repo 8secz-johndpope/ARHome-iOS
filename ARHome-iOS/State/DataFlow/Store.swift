@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import ARKit
 
 class Store: ObservableObject {
   
@@ -19,6 +20,30 @@ class Store: ObservableObject {
       appState.arState.isListActive = true
     case .closeList:
       appState.arState.isListActive = false
+      
+    case .activeCoaching:
+      appState.arState.isCoachingActive = true
+    case .deactiveCoaching:
+      appState.arState.isCoachingActive = false
+      
+    case .loadModel(let model):
+      appState.arState.modelLoading = true
+      appCommand = LoadModelCommand(model: model)
+    case .loadModelDone(let result):
+      appState.arState.modelLoading = false
+      switch result {
+      case .success(let entity):
+        appState.arState.unanchoredEntity = entity
+        appCommand = ShowMessageCommand(message: "请点击屏幕放置物品")
+      case .failure(let error):
+        appCommand = ShowMessageCommand(error: error)
+      }
+      
+    case .placeEntityFailure:
+      appCommand = ShowMessageCommand(message: "此处无法放置该物品")
+    case .placeEntityDone:
+      appState.arState.unanchoredEntity = nil
+      appCommand = HideMessageCommand()
       
     case .loadTypes:
       guard !appState.typeList.typesRequesting else {
@@ -55,6 +80,8 @@ class Store: ObservableObject {
       appState.message.isPresented = true
       appState.message.hideDelay = nil
       appCommand = duration.map(HideMessageCommand.init)
+    case .showError(let error):
+      appCommand = ShowMessageCommand(error: error)
     case .hideMessage:
       appState.message.isPresented = false
     case .hideDelay(let cancellable):

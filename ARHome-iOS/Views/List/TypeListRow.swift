@@ -14,7 +14,7 @@ struct TypeListRow: View {
   
   var body: some View {
     ZStack(alignment: .bottomLeading) {
-      Image(type.imageName)
+      Image(type.thumbnail)
         .resizable()
         .aspectRatio(contentMode: .fit)
       Text(type.name)

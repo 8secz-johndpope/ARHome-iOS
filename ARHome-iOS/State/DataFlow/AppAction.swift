@@ -9,15 +9,20 @@
 import Foundation
 import Combine
 import RealityKit
+import ARKit
 
 enum AppAction {
   case openList
   case closeList
   
-  case scenceUpdate
+  case activeCoaching
+  case deactiveCoaching
   
-  case loadEntity(name: String)
-  case loadEntityDone(result: Result<Entity, AppError>)
+  case loadModel(Object.Model)
+  case loadModelDone(result: Result<Entity, AppError>)
+  
+  case placeEntityFailure
+  case placeEntityDone
   
   case loadTypes
   case loadTypesDone(result: Result<[ObjectType], AppError>)
@@ -26,6 +31,7 @@ enum AppAction {
   case loadObjectsDone(typeID: Int, result: Result<[Object], AppError>)
   
   case showMessage(String, duration: TimeInterval?)
+  case showError(AppError)
   case hideMessage
   case hideDelay(Cancellable)
 }

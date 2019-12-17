@@ -8,6 +8,8 @@
 
 import Foundation
 import Combine
+import ARKit
+import RealityKit
 
 struct AppState {
   
@@ -23,7 +25,11 @@ struct AppState {
 extension AppState {
   struct ARState {
     var isListActive = false
-    var isCoachingActived = false
+    var isCoachingActive = false
+    
+    var modelLoading = false
+    
+    var unanchoredEntity: Entity?
   }
 }
 
