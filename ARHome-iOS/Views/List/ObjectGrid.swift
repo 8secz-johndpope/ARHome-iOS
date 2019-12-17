@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import Grid
+import SwiftUIExtensions
 
 struct ObjectGrid: View {
   let typeID: Int
@@ -43,7 +43,7 @@ struct ObjectGrid: View {
             }
         }
         .gridStyle(
-          ModularGridStyle(columns: .count(2), rows: .min(200))
+          ModularGridStyle(columns: .count(2), rows: .min(180))
         )
       }
     }
@@ -58,7 +58,7 @@ struct ObjectGrid_Previews: PreviewProvider {
     return store
   }
   
-  static var typeID: Int { 3 }
+  static var typeID: Int { 4 }
   
   static var previews: some View {
     NavigationView {

@@ -21,6 +21,7 @@
 		79691FE023A324F30005701E /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79691FDF23A324F30005701E /* AppAction.swift */; };
 		79691FE223A325040005701E /* AppCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79691FE123A325040005701E /* AppCommand.swift */; };
 		79691FE623A327400005701E /* TypeListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79691FE523A327400005701E /* TypeListRow.swift */; };
+		7981F95223A8D73C00BAED57 /* SwiftUIExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 7981F95123A8D73C00BAED57 /* SwiftUIExtensions */; };
 		7983BE6723A3659E0063BEAE /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE6623A3659E0063BEAE /* ARViewContainer.swift */; };
 		7983BE6923A365E00063BEAE /* ObjectGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE6823A365E00063BEAE /* ObjectGrid.swift */; };
 		7983BE7523A373D90063BEAE /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE7423A373D90063BEAE /* Object.swift */; };
@@ -48,7 +49,6 @@
 		79AB622C23A5FAD900D20AF3 /* Desk.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB622323A5FAD900D20AF3 /* Desk.usdz */; };
 		79D6539C23A34B8100B25C93 /* TypeListRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D6539B23A34B8100B25C93 /* TypeListRoot.swift */; };
 		79D6539E23A34B8F00B25C93 /* TypeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D6539D23A34B8F00B25C93 /* TypeList.swift */; };
-		79D653A123A35EAD00B25C93 /* Grid in Frameworks */ = {isa = PBXBuildFile; productRef = 79D653A023A35EAD00B25C93 /* Grid */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,7 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79D653A123A35EAD00B25C93 /* Grid in Frameworks */,
+				7981F95223A8D73C00BAED57 /* SwiftUIExtensions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +392,7 @@
 			);
 			name = "ARHome-iOS";
 			packageProductDependencies = (
-				79D653A023A35EAD00B25C93 /* Grid */,
+				7981F95123A8D73C00BAED57 /* SwiftUIExtensions */,
 			);
 			productName = "ARHome-iOS";
 			productReference = 799C63B72376EE7600A64A1C /* ARHome-iOS.app */;
@@ -467,7 +467,7 @@
 			);
 			mainGroup = 799C63AE2376EE7600A64A1C;
 			packageReferences = (
-				79D6539F23A35EAD00B25C93 /* XCRemoteSwiftPackageReference "Grid" */,
+				7981F95023A8D73C00BAED57 /* XCRemoteSwiftPackageReference "SwiftUIExtensions" */,
 			);
 			productRefGroup = 799C63B82376EE7600A64A1C /* Products */;
 			projectDirPath = "";
@@ -874,21 +874,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		79D6539F23A35EAD00B25C93 /* XCRemoteSwiftPackageReference "Grid" */ = {
+		7981F95023A8D73C00BAED57 /* XCRemoteSwiftPackageReference "SwiftUIExtensions" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:SwiftUIExtensions/Grid.git";
+			repositoryURL = "git@github.com:SwiftExtensions/SwiftUIExtensions.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.7.2;
+				minimumVersion = 0.8.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		79D653A023A35EAD00B25C93 /* Grid */ = {
+		7981F95123A8D73C00BAED57 /* SwiftUIExtensions */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 79D6539F23A35EAD00B25C93 /* XCRemoteSwiftPackageReference "Grid" */;
-			productName = Grid;
+			package = 7981F95023A8D73C00BAED57 /* XCRemoteSwiftPackageReference "SwiftUIExtensions" */;
+			productName = SwiftUIExtensions;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
