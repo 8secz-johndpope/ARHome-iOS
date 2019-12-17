@@ -21,7 +21,7 @@ struct LoadModelCommand: AppCommand {
   let model: Object.Model
   
   func execute(in store: Store) {
-    store.dispatch(.showMessage("正在加载模型，请稍后", duration: nil))
+    store.dispatch(.showMessage("正在加载模型，请稍候...", duration: nil))
     LoadModelRequest(model: model).publisher
       .sink(receiveCompletion: { complete in
         if case .failure(let error) = complete {
