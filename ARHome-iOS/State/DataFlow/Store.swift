@@ -41,9 +41,12 @@ class Store: ObservableObject {
       
     case .placeEntityFailure:
       appCommand = ShowMessageCommand(message: "此处无法放置该物品")
-    case .placeEntityDone:
-      appState.arState.unanchoredEntity = nil
+    case .placeEntityDone(let anchor):
+      appState.arState.entityHasAnchoredTo(anchor)
       appCommand = HideMessageCommand()
+    case .clear:
+      appState.arState.clear()
+      break
       
     case .loadTypes:
       guard !appState.typeList.typesRequesting else {

@@ -22,7 +22,9 @@ enum AppAction {
   case loadModelDone(result: Result<Entity, AppError>)
   
   case placeEntityFailure
-  case placeEntityDone
+  case placeEntityDone(anchor: (AnchorEntity, ARAnchor)?)
+  
+  case clear
   
   case loadTypes
   case loadTypesDone(result: Result<[ObjectType], AppError>)

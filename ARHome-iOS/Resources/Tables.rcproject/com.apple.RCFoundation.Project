@@ -160,7 +160,7 @@
                           "rigidBody-motionType",
                           {
                             "typeName" : "REMotionType",
-                            "value" : "dynamic"
+                            "value" : "static"
                           }
                         ]
                       ]

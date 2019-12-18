@@ -18,6 +18,7 @@ struct ARViewContainer: UIViewRepresentable {
   @EnvironmentObject var store: Store
   
   @Binding var unanchoredModel: Entity?
+  @Binding var willRemoveAnchors: [(AnchorEntity, ARAnchor)]
   
   func makeUIView(context: Context) -> ARView {
     
@@ -56,6 +57,14 @@ struct ARViewContainer: UIViewRepresentable {
   
   func updateUIView(_ arView: ARView, context: Context) {
     context.coordinator.tapARViewGestureRecognizer.isEnabled = unanchoredModel != nil
+    
+    if !willRemoveAnchors.isEmpty {
+      willRemoveAnchors.forEach { entity, anchor in
+        arView.scene.removeAnchor(entity)
+        arView.session.remove(anchor: anchor)
+      }
+      willRemoveAnchors.removeAll()
+    }
   }
   
   func makeCoordinator() -> Coordinator {
@@ -101,6 +110,8 @@ extension ARViewContainer.Coordinator {
     
     let location = sender.location(in: arView)
     
+    var anchorInfo: (AnchorEntity, ARAnchor)?
+    
     if let result = arView.hitTest(location, query: .any).first(where: { result in
       guard let modelComponent = result.entity.components[Object.Model.self] as? Object.Model else {
         return false
@@ -121,13 +132,15 @@ extension ARViewContainer.Coordinator {
       let anchorEntity = AnchorEntity(anchor: anchor)
       anchorEntity.addChild(unanchoredModel)
       arView.scene.addAnchor(anchorEntity)
+      
+      anchorInfo = (anchorEntity, anchor)
     }
     
     if let hasCollition = unanchoredModel as? HasCollision {
       arView.installGestures([.translation, .rotation], for: hasCollition)
     }
     
-    parent.store.dispatch(.placeEntityDone)
+    parent.store.dispatch(.placeEntityDone(anchor: anchorInfo))
   }
   
   @objc func handleModelGesture(_ sender: Any) {

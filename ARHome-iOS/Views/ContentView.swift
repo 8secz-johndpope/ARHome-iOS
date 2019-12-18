@@ -24,15 +24,18 @@ struct ContentView : View {
   var body: some View {
     ZStack(alignment: .bottom) {
       #if arch(arm64)
-      ARViewContainer(unanchoredModel: arStateBinding.unanchoredEntity)
-        .edgesIgnoringSafeArea(.all)
-        .onAppear {
-          UIApplication.shared.isIdleTimerDisabled = true
-        }
-        .onDisappear {
-          UIApplication.shared.isIdleTimerDisabled = false
-        }
-        .statusBar(hidden: true)
+      ARViewContainer(
+        unanchoredModel: arStateBinding.unanchoredEntity,
+        willRemoveAnchors: arStateBinding.willRemoveAnchors
+      )
+      .edgesIgnoringSafeArea(.all)
+      .onAppear {
+        UIApplication.shared.isIdleTimerDisabled = true
+      }
+      .onDisappear {
+        UIApplication.shared.isIdleTimerDisabled = false
+      }
+      .statusBar(hidden: true)
       #else
       Rectangle()
         .fill(Color.gray)
@@ -40,13 +43,27 @@ struct ContentView : View {
       #endif
       
       if !arState.isCoachingActive && !arState.modelLoading && arState.unanchoredEntity == nil {
-        Button(action: {
-          self.store.dispatch(.openList)
-        }) {
-          Image(systemName: "plus.circle")
-            .font(.system(size: 44))
-            .foregroundColor(.white)
-            .padding()
+        ZStack(alignment: .bottom) {
+          Button(action: {
+            self.store.dispatch(.openList)
+          }) {
+            Image(systemName: "plus.circle")
+              .font(.system(size: 44, weight: .thin))
+              .foregroundColor(.white)
+              .padding()
+          }
+          .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+          if !arState.entities.isEmpty {
+            Button(action: {
+              self.store.dispatch(.clear)
+            }) {
+              Image(systemName: "arrow.2.circlepath")
+                .font(.system(size: 22, weight: .light))
+                .foregroundColor(.white)
+                .padding()
+            }
+            .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
+          }
         }
       }
     }

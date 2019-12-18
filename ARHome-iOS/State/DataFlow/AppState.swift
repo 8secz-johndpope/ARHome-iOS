@@ -30,6 +30,33 @@ extension AppState {
     var modelLoading = false
     
     var unanchoredEntity: Entity?
+    
+    var entities: [Entity.ID: Entity] = [:]
+    var anchors: [Entity.ID: (AnchorEntity, ARAnchor)] = [:]
+    
+    var willRemoveAnchors: [(AnchorEntity, ARAnchor)] = []
+    
+    mutating func entityHasAnchoredTo(_ anchor: (AnchorEntity, ARAnchor)?) {
+      guard let unanchoredEntity = unanchoredEntity else {
+        return
+      }
+      
+      entities[unanchoredEntity.id] = unanchoredEntity
+      self.unanchoredEntity = nil
+      
+      guard let anchor = anchor else {
+        return
+      }
+      
+      anchors[anchor.0.id] = anchor
+    }
+    
+    mutating func clear() {
+      entities.removeAll()
+      
+      willRemoveAnchors = Array(anchors.values)
+      anchors.removeAll()
+    }
   }
 }
 
