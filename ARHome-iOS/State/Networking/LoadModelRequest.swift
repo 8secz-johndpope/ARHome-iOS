@@ -31,22 +31,23 @@ struct LoadModelRequest {
         .map { entity -> Entity in entity }
         .eraseToAnyPublisher()
     case let .reality(sceneName, modelName):
-      modelPublisher = Entity.loadAnchorAsync(named: sceneName)
+      modelPublisher = Entity.loadAsync(named: sceneName)
         .mapError(AppError.ModelError.internalError)
         .tryMap { anchor -> Entity in
           guard let entity = anchor.findEntity(named: modelName) else {
             throw AppError.ModelError.noModelInScene(sceneName, modelName: modelName)
           }
           return entity
-      }
-      .mapError { AppError.loadModelFailed($0 as! AppError.ModelError) }
-      .eraseToAnyPublisher()
+        }
+        .mapError { AppError.loadModelFailed($0 as! AppError.ModelError) }
+        .eraseToAnyPublisher()
     }
     
     return modelPublisher
       .handleEvents(receiveOutput: {
         $0.components[Object.Model.self] = self.model
       })
+      .receive(on: DispatchQueue.main)
       .eraseToAnyPublisher()
   }
 }

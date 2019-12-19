@@ -40,7 +40,7 @@ struct ARViewContainer: UIViewRepresentable {
     
     arView.automaticallyConfigureSession = false
     let configuration = ARWorldTrackingConfiguration()
-    configuration.planeDetection = .horizontal
+    configuration.planeDetection = [.horizontal, .vertical]
     configuration.environmentTexturing = .automatic
     configuration.isLightEstimationEnabled = true
     if ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth) {
@@ -121,7 +121,7 @@ extension ARViewContainer.Coordinator {
       unanchoredModel.setPosition(result.position, relativeTo: nil)
       result.entity.addChild(unanchoredModel, preservingWorldTransform: true)
     } else {
-      guard let result = arView.raycast(from: location, allowing: .estimatedPlane, alignment: .horizontal).first else {
+      guard let result = arView.raycast(from: location, allowing: .estimatedPlane, alignment: unanchoredModelComponent.supportedPlane.targetAlignment).first else {
         parent.store.dispatch(.placeEntityFailure)
         return
       }

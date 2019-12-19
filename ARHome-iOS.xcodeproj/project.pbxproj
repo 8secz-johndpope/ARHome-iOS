@@ -27,6 +27,7 @@
 		7983BE7523A373D90063BEAE /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE7423A373D90063BEAE /* Object.swift */; };
 		7983BE7723A374D10063BEAE /* LoadObjectsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE7623A374D10063BEAE /* LoadObjectsRequest.swift */; };
 		7983BE7923A380C10063BEAE /* ObjectGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983BE7823A380C10063BEAE /* ObjectGridItem.swift */; };
+		798CB62823A9E8F800C40919 /* Decorations.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 798CB62723A9E8F800C40919 /* Decorations.rcproject */; };
 		799C63BB2376EE7600A64A1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C63BA2376EE7600A64A1C /* AppDelegate.swift */; };
 		799C63BD2376EE7600A64A1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C63BC2376EE7600A64A1C /* ContentView.swift */; };
 		799C63C12376EE7800A64A1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799C63C02376EE7800A64A1C /* Assets.xcassets */; };
@@ -39,7 +40,6 @@
 		79AB621423A5FAB600D20AF3 /* Objects.json in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621223A5FAB500D20AF3 /* Objects.json */; };
 		79AB621523A5FAB600D20AF3 /* Types.json in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621323A5FAB600D20AF3 /* Types.json */; };
 		79AB622423A5FAD900D20AF3 /* CupSaucerSet.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621823A5FAD900D20AF3 /* CupSaucerSet.usdz */; };
-		79AB622523A5FAD900D20AF3 /* PeriodicTable.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621923A5FAD900D20AF3 /* PeriodicTable.usdz */; };
 		79AB622623A5FAD900D20AF3 /* Laptop.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621A23A5FAD900D20AF3 /* Laptop.usdz */; };
 		79AB622723A5FAD900D20AF3 /* Tulip.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621B23A5FAD900D20AF3 /* Tulip.usdz */; };
 		79AB622823A5FAD900D20AF3 /* FoldableChair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621D23A5FAD900D20AF3 /* FoldableChair.usdz */; };
@@ -88,6 +88,7 @@
 		7983BE7423A373D90063BEAE /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		7983BE7623A374D10063BEAE /* LoadObjectsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadObjectsRequest.swift; sourceTree = "<group>"; };
 		7983BE7823A380C10063BEAE /* ObjectGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectGridItem.swift; sourceTree = "<group>"; };
+		798CB62723A9E8F800C40919 /* Decorations.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Decorations.rcproject; sourceTree = "<group>"; };
 		799C63B72376EE7600A64A1C /* ARHome-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARHome-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		799C63BA2376EE7600A64A1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		799C63BC2376EE7600A64A1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,7 +108,6 @@
 		79AB621223A5FAB500D20AF3 /* Objects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Objects.json; sourceTree = "<group>"; };
 		79AB621323A5FAB600D20AF3 /* Types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Types.json; sourceTree = "<group>"; };
 		79AB621823A5FAD900D20AF3 /* CupSaucerSet.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = CupSaucerSet.usdz; sourceTree = "<group>"; };
-		79AB621923A5FAD900D20AF3 /* PeriodicTable.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = PeriodicTable.usdz; sourceTree = "<group>"; };
 		79AB621A23A5FAD900D20AF3 /* Laptop.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Laptop.usdz; sourceTree = "<group>"; };
 		79AB621B23A5FAD900D20AF3 /* Tulip.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Tulip.usdz; sourceTree = "<group>"; };
 		79AB621D23A5FAD900D20AF3 /* FoldableChair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = FoldableChair.usdz; sourceTree = "<group>"; };
@@ -230,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				79A0E75123A7B816003F6F84 /* Tables.rcproject */,
+				798CB62723A9E8F800C40919 /* Decorations.rcproject */,
 				79AB621623A5FAD900D20AF3 /* USDZs */,
 				792F3A8423A34242002A321D /* JSON */,
 			);
@@ -331,7 +332,6 @@
 			isa = PBXGroup;
 			children = (
 				79AB621823A5FAD900D20AF3 /* CupSaucerSet.usdz */,
-				79AB621923A5FAD900D20AF3 /* PeriodicTable.usdz */,
 				79AB621A23A5FAD900D20AF3 /* Laptop.usdz */,
 				79AB621B23A5FAD900D20AF3 /* Tulip.usdz */,
 			);
@@ -486,7 +486,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				799C63C72376EE7800A64A1C /* LaunchScreen.storyboard in Resources */,
-				79AB622523A5FAD900D20AF3 /* PeriodicTable.usdz in Resources */,
 				79AB622923A5FAD900D20AF3 /* RedChair.usdz in Resources */,
 				79AB622A23A5FAD900D20AF3 /* Loveseat.usdz in Resources */,
 				79AB622B23A5FAD900D20AF3 /* EndTable.usdz in Resources */,
@@ -541,6 +540,7 @@
 				792F3A9923A34746002A321D /* DisposeBag.swift in Sources */,
 				79D6539E23A34B8F00B25C93 /* TypeList.swift in Sources */,
 				79691FE223A325040005701E /* AppCommand.swift in Sources */,
+				798CB62823A9E8F800C40919 /* Decorations.rcproject in Sources */,
 				7983BE6923A365E00063BEAE /* ObjectGrid.swift in Sources */,
 				79691FDE23A324C00005701E /* AppState.swift in Sources */,
 				799C63BB2376EE7600A64A1C /* AppDelegate.swift in Sources */,

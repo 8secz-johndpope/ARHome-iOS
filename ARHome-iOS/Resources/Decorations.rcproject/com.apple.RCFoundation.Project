@@ -1,0 +1,173 @@
+{
+  "__content" : [
+    {
+      "scenes" : [
+        {
+          "__content" : [
+            {
+              "arAnchorSpecification" : {
+                "alignment" : "vertical",
+                "name" : "surface"
+              },
+              "behaviors" : [
+
+              ],
+              "gravity" : [
+                0,
+                0,
+                9.8000001907348633
+              ],
+              "hasGroundPlane" : true,
+              "identifier" : "1C5D943B-17E3-4E58-9CAD-431B931DCF9A",
+              "material" : "concrete",
+              "overrides" : {
+                "children" : {
+                  "1502E445-FCDC-4CBA-B113-3906436049DC" : {
+                    "overrides" : {
+                      "arguments" : [
+                        [
+                          "frame",
+                          {
+                            "typeName" : "Double",
+                            "value" : 0.17999999999999999
+                          }
+                        ],
+                        [
+                          "frameWidth",
+                          {
+                            "typeName" : "String",
+                            "value" : "medium"
+                          }
+                        ],
+                        [
+                          "image",
+                          {
+                            "typeName" : "String",
+                            "value" : "image:8390f2faccf577116892f9fafbf69bc8\/98fb2ce7-dde6-47e1-a5b1-0db4c0255daf.jpeg"
+                          }
+                        ],
+                        [
+                          "matte",
+                          {
+                            "typeName" : "Double",
+                            "value" : 0.20000000000000001
+                          }
+                        ],
+                        [
+                          "styles",
+                          {
+                            "typeName" : "String",
+                            "value" : "Center Peaked"
+                          }
+                        ]
+                      ],
+                      "factory" : {
+                        "identifier" : "com.apple.rc.af.CoreAssetFactories.PictureFrameAssetFactory",
+                        "version" : "1.0"
+                      },
+                      "runtimeAttributes" : [
+                        [
+                          "RuntimeIdentifier",
+                          {
+                            "typeName" : "UUID",
+                            "value" : "B5EFF4F0-E8EA-4D38-8545-2DBE0B100F7E"
+                          }
+                        ],
+                        [
+                          "entityName",
+                          {
+                            "typeName" : "String",
+                            "value" : "Frame"
+                          }
+                        ],
+                        [
+                          "rigidBody-enabled",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
+                          }
+                        ]
+                      ]
+                    },
+                    "transform" : {
+                      "matrix" : [
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        1.8270309709578214e-08,
+                        0,
+                        1
+                      ]
+                    }
+                  }
+                },
+                "factory" : null
+              },
+              "title" : "Frame",
+              "viewTransform" : {
+                "cameraTransform" : [
+                  0.87579548358917236,
+                  1.4901158529312397e-08,
+                  0.48268204927444458,
+                  0,
+                  -0.189057856798172,
+                  0.92010056972503662,
+                  0.34303349256515503,
+                  0,
+                  -0.44411605596542358,
+                  -0.39168205857276917,
+                  0.80582010746002197,
+                  0,
+                  -0.30269095301628113,
+                  -0.22204113006591797,
+                  0.474760502576828,
+                  1
+                ],
+                "sceneTransform" : [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0.99999994039535522,
+                  0,
+                  0,
+                  -0.99999994039535522,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          ],
+          "__version" : 4
+        }
+      ],
+      "tags" : {
+        "__content" : [
+          {
+            "tagsStore" : {
+
+            }
+          }
+        ],
+        "__version" : 1
+      }
+    }
+  ],
+  "__version" : 1
+}
