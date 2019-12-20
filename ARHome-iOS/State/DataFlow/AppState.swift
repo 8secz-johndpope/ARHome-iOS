@@ -54,15 +54,26 @@ extension AppState {
     }
     
     mutating func deleteEntity(id: Entity.ID) {
-      guard let entity = entities.removeValue(forKey: id) else { return }
-      
-      entity.removeFromParent()
-      
-      guard let anchor = entity.anchor, let savedAnchor = anchors[anchor.id], savedAnchor.0.children.isEmpty else {
+      guard let entity = _deleteEntity(id: id), let anchor = entity.anchor, let savedAnchor = anchors[anchor.id], savedAnchor.0.children.isEmpty else {
         return
       }
       
       willRemoveAnchors = [savedAnchor]
+    }
+    
+    @discardableResult
+    private mutating func _deleteEntity(id: Entity.ID) -> Entity? {
+      guard let entity = entities.removeValue(forKey: id) else {
+        return nil
+      }
+      
+      entity.children.map { $0.id }.forEach {
+        _deleteEntity(id: $0)
+      }
+      
+      entity.removeFromParent()
+      
+      return entity
     }
     
     mutating func clear() {
