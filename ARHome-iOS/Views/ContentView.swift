@@ -29,9 +29,9 @@ struct ContentView : View {
       if !arState.isCoachingActive && !arState.modelLoading && arState.unanchoredEntity == nil && !arState.isDragging {
         toolView
       }
-      if arState.isDragging {
-        trashZone
-      }
+      trashZone
+        .opacity(arState.isDragging ? 1 : 0)
+        .animation(.easeInOut(duration: 0.4))
     }
     .sheet(isPresented: arStateBinding.isListActive) {
       TypeListRoot()
