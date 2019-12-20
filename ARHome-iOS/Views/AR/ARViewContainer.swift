@@ -19,6 +19,7 @@ struct ARViewContainer: UIViewRepresentable {
   
   @Binding var unanchoredModel: Entity?
   @Binding var willRemoveAnchors: [(AnchorEntity, ARAnchor)]
+  @Binding var trashZoneFrame: CGRect
   
   func makeUIView(context: Context) -> ARView {
     
@@ -50,7 +51,9 @@ struct ARViewContainer: UIViewRepresentable {
     
     let tapARViewGestureRecognizer = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.tapARView))
     arView.addGestureRecognizer(tapARViewGestureRecognizer)
+    
     context.coordinator.tapARViewGestureRecognizer = tapARViewGestureRecognizer
+    context.coordinator.arView = arView
     
     return arView
   }
@@ -74,7 +77,10 @@ struct ARViewContainer: UIViewRepresentable {
   class Coordinator: NSObject {
     var parent: ARViewContainer
     
+    var arView: ARView!
     var tapARViewGestureRecognizer: UITapGestureRecognizer!
+    
+    private var feedbackGenerator : UIImpactFeedbackGenerator?
     
     init(_ parent: ARViewContainer) {
       self.parent = parent
@@ -104,7 +110,7 @@ extension ARViewContainer.Coordinator {
       return
     }
     
-    guard let unanchoredModel = parent.unanchoredModel, let unanchoredModelComponent = unanchoredModel.components[Object.Model.self] as? Object.Model else {
+    guard let unanchoredModel = parent.unanchoredModel, let unanchoredModelComponent = unanchoredModel.components[ObjectModelComponent.self] as? ObjectModelComponent else {
       return
     }
     
@@ -113,7 +119,7 @@ extension ARViewContainer.Coordinator {
     var anchorInfo: (AnchorEntity, ARAnchor)?
     
     if let result = arView.hitTest(location, query: .any).first(where: { result in
-      guard let modelComponent = result.entity.components[Object.Model.self] as? Object.Model else {
+      guard let modelComponent = result.entity.components[ObjectModelComponent.self] as? ObjectModelComponent else {
         return false
       }
       return !unanchoredModelComponent.supportedPlane.intersection(modelComponent.providedPlane).isEmpty
@@ -138,6 +144,9 @@ extension ARViewContainer.Coordinator {
     
     if let hasCollition = unanchoredModel as? HasCollision {
       arView.installGestures([.translation, .rotation], for: hasCollition)
+        .forEach {
+          $0.addTarget(self, action: #selector(handleModelGesture))
+        }
     }
     
     parent.store.dispatch(.placeEntityDone(anchor: anchorInfo))
@@ -154,11 +163,51 @@ extension ARViewContainer.Coordinator {
     }
   }
   
-  private func rotateEntity(_ sender: EntityRotationGestureRecognizer) {
+  private func translateEntity(_ sender: EntityTranslationGestureRecognizer) {
+    guard let entity = sender.entity, var component = entity.components[ObjectModelComponent.self] as? ObjectModelComponent else {
+      return
+    }
     
+    let location = sender.location(in: arView)
+    
+    switch sender.state {
+    case .began:
+      feedbackGenerator = UIImpactFeedbackGenerator()
+      feedbackGenerator?.prepare()
+      
+      parent.store.dispatch(.beginDragging)
+      
+    case .changed:
+      let isInTrashZone = parent.trashZoneFrame.contains(location)
+      guard component.isInTrashZone != isInTrashZone else {
+        break
+      }
+      component.isInTrashZone = isInTrashZone
+      entity.components[ObjectModelComponent.self] = component
+      
+      feedbackGenerator?.impactOccurred()
+      feedbackGenerator?.prepare()
+      
+    case .ended:
+      feedbackGenerator = nil
+      
+      parent.store.dispatch(.endDragging)
+      
+      guard !component.isInTrashZone else {
+        parent.store.dispatch(.deleteEntity(id: entity.id))
+        break
+      }
+      
+    case .cancelled, .failed:
+      feedbackGenerator = nil
+      
+      parent.store.dispatch(.endDragging)
+      
+    default: break
+    }
   }
   
-  private func translateEntity(_ sender: EntityTranslationGestureRecognizer) {
+  private func rotateEntity(_ sender: EntityRotationGestureRecognizer) {
     
   }
   

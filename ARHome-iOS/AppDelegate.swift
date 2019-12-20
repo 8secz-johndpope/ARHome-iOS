@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.window = window
     window.makeKeyAndVisible()
     
-    Object.Model.registerComponent()
+    ObjectModelComponent.registerComponent()
     
     return true
   }

@@ -10,7 +10,7 @@ import Foundation
 import RealityKit
 
 struct Object: Codable, Identifiable {
-  struct Model: Codable, Component {
+  struct Model: Codable {
     struct Plane: OptionSet, Codable {
       let rawValue: Int
       

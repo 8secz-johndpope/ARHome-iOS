@@ -44,6 +44,15 @@ class Store: ObservableObject {
     case .placeEntityDone(let anchor):
       appState.arState.entityHasAnchoredTo(anchor)
       appCommand = HideMessageCommand()
+      
+    case .beginDragging:
+      appState.arState.isDragging = true
+    case .endDragging:
+      appState.arState.isDragging = false
+      
+    case .deleteEntity(let id):
+      appState.arState.deleteEntity(id: id)
+      
     case .clear:
       appState.arState.clear()
       break

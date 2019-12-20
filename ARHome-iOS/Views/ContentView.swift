@@ -21,50 +21,16 @@ struct ContentView : View {
     $store.appState.arState
   }
   
+  @State var trashZoneFrame: CGRect = .zero
+  
   var body: some View {
     ZStack(alignment: .bottom) {
-      #if arch(arm64)
-      ARViewContainer(
-        unanchoredModel: arStateBinding.unanchoredEntity,
-        willRemoveAnchors: arStateBinding.willRemoveAnchors
-      )
-      .edgesIgnoringSafeArea(.all)
-      .onAppear {
-        UIApplication.shared.isIdleTimerDisabled = true
+      arView
+      if !arState.isCoachingActive && !arState.modelLoading && arState.unanchoredEntity == nil && !arState.isDragging {
+        toolView
       }
-      .onDisappear {
-        UIApplication.shared.isIdleTimerDisabled = false
-      }
-      .statusBar(hidden: true)
-      #else
-      Rectangle()
-        .fill(Color.gray)
-        .edgesIgnoringSafeArea(.all)
-      #endif
-      
-      if !arState.isCoachingActive && !arState.modelLoading && arState.unanchoredEntity == nil {
-        ZStack(alignment: .bottom) {
-          Button(action: {
-            self.store.dispatch(.openList)
-          }) {
-            Image(systemName: "plus.circle")
-              .font(.system(size: 44, weight: .thin))
-              .foregroundColor(.white)
-              .padding()
-          }
-          .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-          if !arState.entities.isEmpty {
-            Button(action: {
-              self.store.dispatch(.clear)
-            }) {
-              Image(systemName: "arrow.2.circlepath")
-                .font(.system(size: 22, weight: .light))
-                .foregroundColor(.white)
-                .padding()
-            }
-            .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
-          }
-        }
+      if arState.isDragging {
+        trashZone
       }
     }
     .sheet(isPresented: arStateBinding.isListActive) {
@@ -83,10 +49,90 @@ struct ContentView : View {
     }
   }
   
+  #if arch(arm64)
+  var arView: some View {
+    ARViewContainer(
+      unanchoredModel: arStateBinding.unanchoredEntity,
+      willRemoveAnchors: arStateBinding.willRemoveAnchors,
+      trashZoneFrame: $trashZoneFrame
+    )
+    .edgesIgnoringSafeArea(.all)
+    .onAppear {
+      UIApplication.shared.isIdleTimerDisabled = true
+    }
+    .onDisappear {
+      UIApplication.shared.isIdleTimerDisabled = false
+    }
+    .statusBar(hidden: true)
+  }
+  #else
+  var arView: some View {
+    Rectangle()
+      .fill(Color.gray)
+      .edgesIgnoringSafeArea(.all)
+  }
+  #endif
+  
+  var toolView: some View {
+    ZStack(alignment: .bottom) {
+      Button(action: {
+        self.store.dispatch(.openList)
+      }) {
+        Image(systemName: "plus.circle")
+          .font(.system(size: 44, weight: .thin))
+          .foregroundColor(.white)
+          .padding()
+      }
+      .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+      if !arState.entities.isEmpty {
+        Button(action: {
+          self.store.dispatch(.clear)
+        }) {
+          Image(systemName: "arrow.2.circlepath")
+            .font(.system(size: 22, weight: .light))
+            .foregroundColor(.white)
+            .padding()
+        }
+        .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
+      }
+    }
+  }
+  
+  var trashZone: some View {
+    GeometryReader { geometry in
+      ZStack(alignment: .top) {
+        Rectangle()
+          .fill(
+            LinearGradient(
+              gradient: Gradient(colors: [Color.red.opacity(0.7), Color.red.opacity(0)]),
+              startPoint: .top,
+              endPoint: .bottom
+            )
+          )
+          .edgesIgnoringSafeArea(.all)
+          .frame(height: geometry.size.height / 4, alignment: .top)
+          .onAppear {
+            self.trashZoneFrame = CGRect(x: 0, y: 0, width: geometry.size.width, height: geometry.size.height / 4)
+          }
+        Text("移到此处删除")
+          .font(.headline)
+          .foregroundColor(Color.white)
+          .padding()
+      }
+      .frame(width: geometry.size.width, height: geometry.size.height, alignment: .top)
+    }
+  }
+  
 }
 
 struct ContentView_Previews : PreviewProvider {
+  static var store: Store {
+    let store = Store()
+    store.appState.arState.isDragging = true
+    return store
+  }
+  
   static var previews: some View {
-    ContentView().environmentObject(Store())
+    ContentView().environmentObject(store)
   }
 }

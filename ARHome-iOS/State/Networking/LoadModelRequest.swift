@@ -45,7 +45,7 @@ struct LoadModelRequest {
     
     return modelPublisher
       .handleEvents(receiveOutput: {
-        $0.components[Object.Model.self] = self.model
+        $0.components[ObjectModelComponent.self] = ObjectModelComponent(model: self.model)
       })
       .receive(on: DispatchQueue.main)
       .eraseToAnyPublisher()

@@ -6,7 +6,7 @@
 //  Copyright © 2019 高健. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Combine
 import ARKit
 import RealityKit
@@ -36,6 +36,8 @@ extension AppState {
     
     var willRemoveAnchors: [(AnchorEntity, ARAnchor)] = []
     
+    var isDragging = false
+    
     mutating func entityHasAnchoredTo(_ anchor: (AnchorEntity, ARAnchor)?) {
       guard let unanchoredEntity = unanchoredEntity else {
         return
@@ -49,6 +51,18 @@ extension AppState {
       }
       
       anchors[anchor.0.id] = anchor
+    }
+    
+    mutating func deleteEntity(id: Entity.ID) {
+      guard let entity = entities.removeValue(forKey: id) else { return }
+      
+      entity.removeFromParent()
+      
+      guard let anchor = entity.anchor, let savedAnchor = anchors[anchor.id], savedAnchor.0.children.isEmpty else {
+        return
+      }
+      
+      willRemoveAnchors = [savedAnchor]
     }
     
     mutating func clear() {

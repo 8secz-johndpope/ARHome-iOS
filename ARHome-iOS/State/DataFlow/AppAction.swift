@@ -24,6 +24,10 @@ enum AppAction {
   case placeEntityFailure
   case placeEntityDone(anchor: (AnchorEntity, ARAnchor)?)
   
+  case beginDragging
+  case endDragging
+  
+  case deleteEntity(id: Entity.ID)
   case clear
   
   case loadTypes
