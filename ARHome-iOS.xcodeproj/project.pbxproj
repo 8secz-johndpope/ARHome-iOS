@@ -40,7 +40,6 @@
 		79AB621423A5FAB600D20AF3 /* Objects.json in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621223A5FAB500D20AF3 /* Objects.json */; };
 		79AB621523A5FAB600D20AF3 /* Types.json in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621323A5FAB600D20AF3 /* Types.json */; };
 		79AB622423A5FAD900D20AF3 /* CupSaucerSet.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621823A5FAD900D20AF3 /* CupSaucerSet.usdz */; };
-		79AB622623A5FAD900D20AF3 /* Laptop.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621A23A5FAD900D20AF3 /* Laptop.usdz */; };
 		79AB622723A5FAD900D20AF3 /* Tulip.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621B23A5FAD900D20AF3 /* Tulip.usdz */; };
 		79AB622823A5FAD900D20AF3 /* FoldableChair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621D23A5FAD900D20AF3 /* FoldableChair.usdz */; };
 		79AB622923A5FAD900D20AF3 /* RedChair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 79AB621E23A5FAD900D20AF3 /* RedChair.usdz */; };
@@ -109,7 +108,6 @@
 		79AB621223A5FAB500D20AF3 /* Objects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Objects.json; sourceTree = "<group>"; };
 		79AB621323A5FAB600D20AF3 /* Types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Types.json; sourceTree = "<group>"; };
 		79AB621823A5FAD900D20AF3 /* CupSaucerSet.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = CupSaucerSet.usdz; sourceTree = "<group>"; };
-		79AB621A23A5FAD900D20AF3 /* Laptop.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Laptop.usdz; sourceTree = "<group>"; };
 		79AB621B23A5FAD900D20AF3 /* Tulip.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Tulip.usdz; sourceTree = "<group>"; };
 		79AB621D23A5FAD900D20AF3 /* FoldableChair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = FoldableChair.usdz; sourceTree = "<group>"; };
 		79AB621E23A5FAD900D20AF3 /* RedChair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RedChair.usdz; sourceTree = "<group>"; };
@@ -335,7 +333,6 @@
 			isa = PBXGroup;
 			children = (
 				79AB621823A5FAD900D20AF3 /* CupSaucerSet.usdz */,
-				79AB621A23A5FAD900D20AF3 /* Laptop.usdz */,
 				79AB621B23A5FAD900D20AF3 /* Tulip.usdz */,
 			);
 			path = Decoration;
@@ -493,7 +490,6 @@
 				79AB622A23A5FAD900D20AF3 /* Loveseat.usdz in Resources */,
 				79AB622B23A5FAD900D20AF3 /* EndTable.usdz in Resources */,
 				799C63C42376EE7800A64A1C /* Preview Assets.xcassets in Resources */,
-				79AB622623A5FAD900D20AF3 /* Laptop.usdz in Resources */,
 				79AB622723A5FAD900D20AF3 /* Tulip.usdz in Resources */,
 				79AB621523A5FAB600D20AF3 /* Types.json in Resources */,
 				79AB621423A5FAB600D20AF3 /* Objects.json in Resources */,
