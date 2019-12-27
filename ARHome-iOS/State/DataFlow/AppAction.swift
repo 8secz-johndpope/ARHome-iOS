@@ -23,6 +23,7 @@ enum AppAction {
   
   case placeEntityFailure
   case placeEntityDone(anchor: (AnchorEntity, ARAnchor)?)
+  case placeEntityCancel
   
   case beginDragging
   case endDragging

@@ -26,7 +26,7 @@ struct ContentView : View {
   var body: some View {
     ZStack(alignment: .bottom) {
       arView
-      if !arState.isCoachingActive && !arState.modelLoading && arState.unanchoredEntity == nil && !arState.isDragging {
+      if !arState.isCoachingActive && !arState.modelLoading && !arState.isDragging {
         toolView
       }
       trashZone
@@ -76,7 +76,7 @@ struct ContentView : View {
   var toolView: some View {
     ZStack(alignment: .bottom) {
       Button(action: {
-        self.store.dispatch(.openList)
+        self.store.dispatch(self.arState.unanchoredEntity != nil ? .placeEntityCancel : .openList)
       }) {
         Image(systemName: "plus.circle")
           .font(.system(size: 44, weight: .thin))
@@ -84,7 +84,9 @@ struct ContentView : View {
           .padding()
       }
       .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-      if !arState.entities.isEmpty {
+      .rotationEffect(.degrees(arState.unanchoredEntity != nil ? 45 : 0))
+      .animation(.default)
+      if !arState.entities.isEmpty && arState.unanchoredEntity == nil {
         Button(action: {
           self.store.dispatch(.clear)
         }) {
