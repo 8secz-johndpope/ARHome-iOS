@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct TypeListRow: View {
-  
   var type: ObjectType
   
   var body: some View {

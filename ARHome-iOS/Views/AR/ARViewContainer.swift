@@ -81,6 +81,7 @@ struct ARViewContainer: UIViewRepresentable {
     var tapARViewGestureRecognizer: UITapGestureRecognizer!
     
     private var feedbackGenerator : UIImpactFeedbackGenerator?
+    private var transform: Transform?
     
     init(_ parent: ARViewContainer) {
       self.parent = parent
@@ -163,22 +164,29 @@ extension ARViewContainer.Coordinator {
     }
   }
   
+  private func rotateEntity(_ sender: EntityRotationGestureRecognizer) {
+    
+  }
+  
+}
+
+private extension ARViewContainer.Coordinator {
   private func translateEntity(_ sender: EntityTranslationGestureRecognizer) {
     guard let entity = sender.entity, var component = entity.components[ObjectModelComponent.self] as? ObjectModelComponent else {
       return
     }
-    
-    let location = sender.location(in: arView)
     
     switch sender.state {
     case .began:
       feedbackGenerator = UIImpactFeedbackGenerator()
       feedbackGenerator?.prepare()
       
+      transform = entity.transform
+      
       parent.store.dispatch(.beginDragging)
       
     case .changed:
-      let isInTrashZone = parent.trashZoneFrame.contains(location)
+      let isInTrashZone = parent.trashZoneFrame.contains(sender.location(in: arView))
       guard component.isInTrashZone != isInTrashZone else {
         break
       }
@@ -189,17 +197,33 @@ extension ARViewContainer.Coordinator {
       feedbackGenerator?.prepare()
       
     case .ended:
-      feedbackGenerator = nil
-      
-      parent.store.dispatch(.endDragging)
+      defer {
+        feedbackGenerator = nil
+        transform = nil
+      }
       
       guard !component.isInTrashZone else {
         parent.store.dispatch(.deleteEntity(id: entity.id))
         break
       }
       
+      parent.store.dispatch(.endDragging)
+      
+      guard !canPlaceEntity(entity) else {
+        break
+      }
+      
+      entity.move(to: transform!, relativeTo: entity.parent!, duration: 0.3, timingFunction: .easeInOut)
+      
+      parent.store.dispatch(.showMessage("无法将该物品放置于此处", duration: 3))
+      
     case .cancelled, .failed:
-      feedbackGenerator = nil
+      defer {
+        feedbackGenerator = nil
+        transform = nil
+      }
+      
+      entity.move(to: transform!, relativeTo: entity.parent!, duration: 0.3, timingFunction: .easeInOut)
       
       parent.store.dispatch(.endDragging)
       
@@ -207,10 +231,19 @@ extension ARViewContainer.Coordinator {
     }
   }
   
-  private func rotateEntity(_ sender: EntityRotationGestureRecognizer) {
+  private func canPlaceEntity(_ entity: Entity) -> Bool {
+    guard let component = entity.components[ObjectModelComponent.self] as? ObjectModelComponent else {
+      return false
+    }
     
+    let location = arView.project(entity.position(relativeTo: nil))!
+    switch entity.parent {
+    case _ as AnchorEntity:
+      return !arView.raycast(from: location, allowing: .existingPlaneGeometry, alignment: component.supportedPlane.targetAlignment).isEmpty
+    case let model:
+      return arView.hitTest(location, query: .all).map({ $0.entity }).contains(model)
+    }
   }
-  
 }
 
 extension Object.Model.Plane {

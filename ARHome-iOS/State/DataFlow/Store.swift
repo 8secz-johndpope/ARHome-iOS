@@ -55,6 +55,7 @@ class Store: ObservableObject {
       
     case .deleteEntity(let id):
       appState.arState.deleteEntity(id: id)
+      appState.arState.isDragging = false
       
     case .clear:
       appState.arState.clear()
