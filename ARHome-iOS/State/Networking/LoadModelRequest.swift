@@ -12,6 +12,12 @@ import RealityKit
 
 struct LoadModelRequest {
   let model: Object.Model
+  let willGenerateCollisionShapes: Bool
+  
+  init(model: Object.Model, willGenerateCollisionShapes: Bool = true) {
+    self.model = model
+    self.willGenerateCollisionShapes = willGenerateCollisionShapes
+  }
   
   var publisher: AnyPublisher<Entity, AppError> {
     guard !model.supportedPlane.isEmpty else {
@@ -25,7 +31,9 @@ struct LoadModelRequest {
     case .usdz:
       modelPublisher = Entity.loadModelAsync(named: model.file)
         .handleEvents(receiveOutput: {
-          $0.generateCollisionShapes(recursive: true)
+          if self.willGenerateCollisionShapes {
+            $0.generateCollisionShapes(recursive: true)
+          }
         })
         .mapError { AppError.loadModelFailed(.internalError($0)) }
         .map { entity -> Entity in entity }

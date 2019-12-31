@@ -9,12 +9,15 @@
 import UIKit
 import SwiftUI
 import ARKit
+import RealityKit
+import Combine
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
+  var cacellables: [AnyCancellable] = []
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
@@ -26,6 +29,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window.makeKeyAndVisible()
     
     ObjectModelComponent.registerComponent()
+    
+    Object.all
+      .compactMap { $0.model }
+      .map { LoadModelRequest(model: $0, willGenerateCollisionShapes: false).publisher }
+      .reduce(Empty<Entity, AppError>().eraseToAnyPublisher()) { res, current in
+        res.append(current).eraseToAnyPublisher()
+      }
+      .collect()
+      .eraseToAnyPublisher()
+      .sink(receiveCompletion: { _ in }, receiveValue: { _ in print("加载完成") })
+      .store(in: &cacellables)
     
     return true
   }

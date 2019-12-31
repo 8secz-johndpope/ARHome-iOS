@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		791EE50823B9D7EF004E37FB /* ARViewContainerCoordinator+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791EE50723B9D7EF004E37FB /* ARViewContainerCoordinator+Gesture.swift */; };
+		791EE50E23B9DB86004E37FB /* ARViewContainerCoordinator+MultipeerConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791EE50D23B9DB86004E37FB /* ARViewContainerCoordinator+MultipeerConnectivity.swift */; };
 		792F3A8323A3338D002A321D /* ObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3A8223A3338D002A321D /* ObjectType.swift */; };
 		792F3A8723A34307002A321D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3A8623A34307002A321D /* Helpers.swift */; };
 		792F3A8923A34335002A321D /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3A8823A34335002A321D /* FileHelper.swift */; };
@@ -69,6 +71,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		791EE50723B9D7EF004E37FB /* ARViewContainerCoordinator+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewContainerCoordinator+Gesture.swift"; sourceTree = "<group>"; };
+		791EE50D23B9DB86004E37FB /* ARViewContainerCoordinator+MultipeerConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewContainerCoordinator+MultipeerConnectivity.swift"; sourceTree = "<group>"; };
 		792F3A8223A3338D002A321D /* ObjectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectType.swift; sourceTree = "<group>"; };
 		792F3A8623A34307002A321D /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		792F3A8823A34335002A321D /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				7983BE6623A3659E0063BEAE /* ARViewContainer.swift */,
+				791EE50723B9D7EF004E37FB /* ARViewContainerCoordinator+Gesture.swift */,
+				791EE50D23B9DB86004E37FB /* ARViewContainerCoordinator+MultipeerConnectivity.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -522,11 +528,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				792F3A8323A3338D002A321D /* ObjectType.swift in Sources */,
+				791EE50E23B9DB86004E37FB /* ARViewContainerCoordinator+MultipeerConnectivity.swift in Sources */,
 				792F3A8F23A34402002A321D /* Sample.swift in Sources */,
 				794123D123A4795700F1380C /* BlurView.swift in Sources */,
 				799C63BD2376EE7600A64A1C /* ContentView.swift in Sources */,
 				79691FE023A324F30005701E /* AppAction.swift in Sources */,
 				79691FE623A327400005701E /* TypeListRow.swift in Sources */,
+				791EE50823B9D7EF004E37FB /* ARViewContainerCoordinator+Gesture.swift in Sources */,
 				792F3A8923A34335002A321D /* FileHelper.swift in Sources */,
 				7983BE6723A3659E0063BEAE /* ARViewContainer.swift in Sources */,
 				792F3A9723A3466A002A321D /* AppError.swift in Sources */,

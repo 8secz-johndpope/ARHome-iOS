@@ -9,7 +9,7 @@
 import Foundation
 import RealityKit
 
-struct ObjectModelComponent: Component {
+struct ObjectModelComponent: Component, Codable {
   let model: Object.Model
   var isInTrashZone = false
   
