@@ -31,8 +31,6 @@ extension ARViewContainer.Coordinator: MCSessionDelegate {
   func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
     if state == .connected {
       parent.store.dispatch(.showMessage("\(peerID.displayName)加入连接", duration: 5))
-    } else if state == .notConnected {
-      parent.store.dispatch(.showMessage("\(peerID.displayName)断开连接", duration: 5))
     }
   }
 }

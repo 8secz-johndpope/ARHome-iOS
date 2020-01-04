@@ -12,6 +12,8 @@ import ARKit
 import RealityKit
 import Combine
 
+var modelTemplates: [String: Entity] = [:]
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -32,13 +34,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     Object.all
       .compactMap { $0.model }
-      .map { LoadModelRequest(model: $0, willGenerateCollisionShapes: false).publisher }
+      .map { LoadModelRequest(model: $0).publisher }
       .reduce(Empty<Entity, AppError>().eraseToAnyPublisher()) { res, current in
         res.append(current).eraseToAnyPublisher()
       }
       .collect()
       .eraseToAnyPublisher()
-      .sink(receiveCompletion: { _ in }, receiveValue: { _ in print("加载完成") })
+      .sink(receiveCompletion: { _ in
+        print("加载完成")
+      }, receiveValue: { models in
+        modelTemplates = [String: Entity](uniqueKeysWithValues: models.map { ($0.name, $0) })
+      })
       .store(in: &cacellables)
     
     return true

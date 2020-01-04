@@ -25,6 +25,13 @@ struct LoadModelRequest {
         .eraseToAnyPublisher()
     }
     
+    if let savedModel = modelTemplates[model.modelName] {
+      return Just(savedModel.clone(recursive: true))
+        .mapError { _ -> AppError in }
+        .receive(on: DispatchQueue.main)
+        .eraseToAnyPublisher()
+    }
+    
     let modelPublisher: AnyPublisher<Entity, AppError>
     
     switch model.type {
@@ -53,6 +60,7 @@ struct LoadModelRequest {
     
     return modelPublisher
       .handleEvents(receiveOutput: {
+        $0.name = self.model.modelName
         $0.components[ObjectModelComponent.self] = ObjectModelComponent(model: self.model)
       })
       .receive(on: DispatchQueue.main)
